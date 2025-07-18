@@ -1,39 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>My Personal Website</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 700px;
-      margin: 50px auto;
-      line-height: 1.6;
-      padding: 0 20px;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    a {
-      color: #3498db;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Wei DONG - Nanyang Assistant Professor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #fff;
+            color: #222;
+        }
+        /* 顶部导航栏 */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            height: 68px;
+        }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+        .ntu-logo {
+            height: 42px;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 32px;
+        }
+        .navbar-links a {
+            text-decoration: none;
+            color: #0066a1;
+            font-weight: 500;
+            font-size: 1.08em;
+            transition: color 0.18s;
+        }
+        .navbar-links a:hover {
+            color: #00507e;
+        }
+        /* 页面内容 */
+        .container {
+            max-width: 780px;
+            margin: 50px auto 60px auto;
+            background: #fff;
+            padding: 0 24px;
+        }
+        .profile-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+        }
+        .profile-photo {
+            width: 210px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        h1 {
+            font-size: 2.1em;
+            font-weight: 550;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 1.35em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 48px;
+        }
+        .info {
+            margin-bottom: 14px;
+        }
+        .info a {
+            color: #0077b6;
+            text-decoration: none;
+        }
+        .info a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            margin-top: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Hello, I'm Siyi Wang</h1>
-  <p>Welcome to my personal website. I'm a student interested in differential privacy and data security.</p>
-  
-  <h2>About Me</h2>
-  <p>I do research on shuffle differential privacy and poisoning attacks.</p>
+    <!-- 顶部导航栏 -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="ntu_logo.png" alt="NTU Logo" class="ntu-logo">
+        </div>
+        <div class="navbar-links">
+            <a href="index.html">About</a>
+            <a href="publications.html">Publications</a>
+            <a href="people.html">People</a>
+        </div>
+    </div>
 
-  <h2>Publications</h2>
-  <ul>
-    <li>📄 Paper 1: <a href="#">A Framework for Defending Shuffle-DP</a></li>
-    <li>📄 Paper 2: <a href="#">Benchmarking DP Quantile Estimation</a></li>
-  </ul>
+    <div class="container">
+        <div class="profile-header">
+            <img src="wei_dong_photo.jpg" alt="Wei Dong" class="profile-photo">
+            <div>
+                <h1>Wei DONG</h1>
+                <div class="info">
+                    <b>Nanyang Assistant Professor</b><br>
+                    College of Computing and Data Science<br>
+                    <a href="https://www.ntu.edu.sg/" target="_blank">Nanyang Technological University</a><br>
+                    Block N4, 02b-69b<br>
+                    50 Nanyang Ave<br>
+                    <small>Ph.D. Thesis</small><br>
+                    Email: wei_dong AT ntu DOT edu DOT sg
+                </div>
+                <div>
+                    我目前是南洋理工大学（NTU）Nanyang Assistant Professor。我的研究兴趣包括数据安全与隐私、数据库理论与算法、以及机器学习。此前，我在卡耐基梅隆大学担任博士后，合作者为 Elaine Shi 教授和 Giulia Fanti 教授。在此之前，我在 <a href="https://www.hkust.edu.hk/" target="_blank">香港科技大学</a> 计算机系攻读博士学位，导师是 Yi Ke 教授。
+                </div>
+                <div style="margin-top:10px;">
+                    我欢迎有志于攻读博士、访问学者的同学加入课题组。如有兴趣请发邮件并附上简历。
+                </div>
+            </div>
+        </div>
 
-  <h2>Contact</h2>
-  <p>Email: siyi@example.com</p>
-  <p><a href="https://github.com/yourusername">GitHub</a></p>
+        <h2>Research Interests</h2>
+        <div>Data security and privacy, database theory and algorithms, machine learning.</div>
+
+        <h2>News</h2>
+        <div>(暂无)</div>
+
+        <h2>Awards</h2>
+        <ul>
+            <li>SIGMOD Jim Gray Doctoral Dissertation Award Runner-up 2024, ACM SIGMOD</li>
+            <li>Best PhD Dissertation Award 2023, CSE, HKUST</li>
+            <li>SENG PhD Research Excellence Award 2023, School of Engineering, HKUST</li>
+            <li>ACM SIGMOD Research Highlight Award 2023, ACM SIGMOD</li>
+            <li>ACM SIGMOD Best Paper Award 2022, ACM SIGMOD</li>
+            <li>RedBird Academic Excellence Award 2018, 2022, 2023, HKUST</li>
+            <li>Hong Kong PhD Fellowship 2018-2022, RGC of Hong Kong</li>
+            <li>Top Anchor Award 2017 (Department of EE, CityU)</li>
+            <li>CityU Scholarship 2016-2017, CityU</li>
+            <li>Outstanding Student Prize 2015, Department of EE, CityU</li>
+            <li>CityU Mainland Entrance Scholarship 2013-2017, CityU</li>
+        </ul>
+
+        <h2>Service</h2>
+        <ul>
+            <li><b>PC Member:</b> ICDE 2024, Usenix Security 2025</li>
+            <li><b>Reviewer:</b> Journal of Privacy and Confidentiality</li>
+        </ul>
+
+        <h2>Teaching</h2>
+        <div>(暂无)</div>
+    </div>
 </body>
 </html>
