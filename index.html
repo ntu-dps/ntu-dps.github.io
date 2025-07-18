@@ -33,7 +33,20 @@
         .ntu-logo {
             height: 42px;
         }
-        .navbar-links {
+        .navbar-links a {
+            text-decoration: none;
+            color: #222;            /* 默认黑色 */
+            font-weight: 500;
+            font-size: 1.08em;
+            transition: color 0.18s;
+        }
+        .navbar-links a.active {
+            color: #0066a1;         /* 当前页面蓝色 */
+        }
+        .navbar-links a:hover {
+            color: #00507e;
+        }
+/*         .navbar-links {
             display: flex;
             gap: 32px;
         }
@@ -46,7 +59,7 @@
         }
         .navbar-links a:hover {
             color: #00507e;
-        }
+        } */
         /* 页面内容 */
         .container {
             max-width: 780px;
@@ -98,7 +111,7 @@
             <img src="img/ntu_logo.png" alt="NTU Logo" class="ntu-logo">
         </div>
         <div class="navbar-links">
-            <a href="index.html">About</a>
+            <a href="index.html" class="active">About</a>
             <a href="publications.html">Publications</a>
             <a href="people.html">People</a>
         </div>
