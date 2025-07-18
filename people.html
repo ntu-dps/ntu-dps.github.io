@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>People – Wei DONG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #fff;
+            color: #222;
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 68px;
+        }
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+        .ntu-logo {
+            height: 42px;
+        }
+        .navbar-links a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+            font-size: 1.08em;
+            transition: color 0.18s;
+            margin-left: 32px;
+        }
+        .navbar-links a.active {
+            color: #0066a1;
+        }
+        .navbar-links a:hover {
+            color: #00507e;
+        }
+        .container {
+            max-width: 780px;
+            margin: 50px auto 60px;
+            padding: 0 24px;
+        }
+        h1 {
+            font-size: 2.1em;
+            font-weight: 550;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.35em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 48px;
+            margin-bottom: 20px;
+        }
+        .person-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding: 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        .person-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .person-info h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        .person-info .period {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 4px;
+        }
+        .person-info .degree {
+            color: #888;
+            font-size: 0.85em;
+        }
+        a {
+            color: #0077b6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="img/ntu_logo.png" alt="NTU Logo" class="ntu-logo">
+        </div>
+        <div class="navbar-links">
+            <a href="index.html">About</a>
+            <a href="publications.html">Publications</a>
+            <a href="people.html" class="active">People</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>People</h1>
+        
+        <h2>Research Fellows</h2>
+        
+        <div class="person-card">
+            <img src="img/xinfeng_li.jpg" alt="Dr. Xinfeng Li" class="person-photo">
+            <div class="person-info">
+                <h3>Dr. Xinfeng Li</h3>
+                <div class="period">Nov 2024 - Present</div>
+                <div class="degree">(PhD, Zhejiang University)</div>
+            </div>
+        </div>
+        
+        <div class="person-card">
+            <img src="img/lixu_wang.jpg" alt="Dr. Lixu Wang" class="person-photo">
+            <div class="person-info">
+                <h3>Dr. Lixu Wang</h3>
+                <div class="period">Jan 2025 - Present</div>
+                <div class="degree">(PhD, Northwestern University)</div>
+            </div>
+        </div>
+        
+        <div class="person-card">
+            <img src="img/peizhuo_lv.jpg" alt="Dr. Peizhuo Lv" class="person-photo">
+            <div class="person-info">
+                <h3>Dr. Peizhuo Lv</h3>
+                <div class="period">Mar 2025 - Present</div>
+                <div class="degree">(PhD, Chinese Academy of Sciences)</div>
+            </div>
+        </div>
+        
+        <h2>PhD Students</h2>
+        
+        <div class="person-card">
+            <img src="img/yihua_hu.jpg" alt="Yihua Hu" class="person-photo">
+            <div class="person-info">
+                <h3>Yihua Hu</h3>
+                <div class="period">Aug 2024 - Present</div>
+                <div class="degree">(MS, Columbia University)</div>
+            </div>
+        </div>
+        
+        <div class="person-card">
+            <img src="img/xinghe_chen.jpg" alt="Xinghe Chen" class="person-photo">
+            <div class="person-info">
+                <h3>Xinghe Chen</h3>
+                <div class="period">Aug 2024 - Present</div>
+                <div class="degree">(MS, Columbia University)</div>
+            </div>
+        </div>
+        
+        <div class="person-card">
+            <img src="img/li_ge.jpg" alt="Li Ge" class="person-photo">
+            <div class="person-info">
+                <h3>Li Ge</h3>
+                <div class="period">Aug 2025 - Present</div>
+                <div class="degree">(ME, SJTU)</div>
+            </div>
+        </div>
+        
+        <div class="person-card">
+            <img src="img/fahong_zhang.jpg" alt="Fahong Zhang" class="person-photo">
+            <div class="person-info">
+                <h3>Fahong Zhang</h3>
+                <div class="period">Aug 2025 - Present</div>
+                <div class="degree">(MS, XJTU)</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
