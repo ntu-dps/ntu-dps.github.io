@@ -23,7 +23,7 @@
                    "Helvetica Neue", Helvetica, Arial,
                    "Microsoft YaHei", sans-serif;
       font-weight: 400;
-      line-height: 1.72;
+      line-height: 1.58;                  /* ↓ tighter than 1.72 */
       letter-spacing: 0.011em;
       color: #222;
       background: #fff;
@@ -35,16 +35,16 @@
 
     /* ---------- Headings ---------- */
     h1 {
-      font-size: 2.4rem;          /* ≈ 41 px */
+      font-size: 2.4rem;
       font-weight: 700;
       line-height: 1.25;
-      margin: 0 0 2.3rem;
+      margin: 0 0 2.1rem;
     }
     h2 {
-      font-size: 1.45rem;         /* ≈ 25 px */
+      font-size: 1.45rem;
       font-weight: 600;
       line-height: 1.35;
-      margin: 2.2rem 0 1rem;
+      margin: 2rem 0 0.9rem;
       padding-bottom: 0.25rem;
       border-bottom: 1px solid #eee;
     }
@@ -75,7 +75,7 @@
       flex: 0 0 calc(50% - 24px);
       box-sizing: border-box;
       display: flex; align-items: center; gap: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;                 /* slightly tighter */
       padding: 16px;
       background: #fafafa;
       border: 1px solid #e0e0e0; border-radius: 8px;
@@ -85,33 +85,29 @@
       border-radius: 50% / 60%; object-fit: cover;
     }
     .person-info h3 {
-      margin: 0 0 8px 0;
-      font-size: 1.2rem;
-      font-weight: 600;
+      margin: 0 0 7px 0;                  /* tighter */
+      font-size: 1.2rem; font-weight: 600;
     }
     .person-info h3 a { color: inherit; text-decoration: none; }
     .person-info h3 a:hover { text-decoration: underline; }
 
     .person-info .period,
     .person-info .cosupervision {
-      color: #666; font-size: 0.9rem; margin-bottom: 4px;
+      color: #666; font-size: 0.9rem; margin-bottom: 3px;
     }
     .person-info .degree { color: #888; font-size: 0.85rem; }
 
-    /* ---------- Lists for visitors and alumni ---------- */
+    /* ---------- Visitor & alumni lists ---------- */
     .visiting-students ul,
-    .alumni-list ul { margin: 0 0 1.15rem 1.3rem; padding: 0; }
+    .alumni-list ul { margin: 0 0 1rem 1.3rem; padding: 0; }
     .visiting-students li,
-    .alumni-list li { margin-bottom: 0.55rem; }
+    .alumni-list li { margin-bottom: 0.45rem; }   /* tighter */
 
     .alumni-section {
       display: flex; align-items: center; gap: 8px;
-      font-size: 1.45rem;         /* keep same as h2 */
-      font-weight: 600;
-      line-height: 1.35;
-      margin: 2.2rem 0 1rem;
-      padding-bottom: 0.25rem;
-      border-bottom: 1px solid #eee;
+      font-size: 1.45rem; font-weight: 600; line-height: 1.35;
+      margin: 2rem 0 0.9rem;
+      padding-bottom: 0.25rem; border-bottom: 1px solid #eee;
     }
     .alumni-icon {
       width: 20px; height: 20px;
@@ -137,7 +133,7 @@
   <div class="container">
     <h1>People</h1>
 
-    <!-- ========== Research Fellows ========== -->
+    <!-- Research Fellows -->
     <h2>Research Fellows</h2>
     <div class="card-group">
       <!-- Xinfeng Li -->
@@ -173,11 +169,10 @@
       </div>
     </div>
 
-    <!-- ========== PhD Students ========== -->
+    <!-- PhD Students -->
     <h2>PhD Students</h2>
     <div class="card-group">
-      <!-- Repeat existing student cards (content unchanged) -->
-      <!-- Yihua Hu -->
+      <!-- (student cards unchanged) -->
       <div class="person-card">
         <img src="img/yihua_hu.jpg" alt="Yihua Hu" class="person-photo">
         <div class="person-info">
@@ -187,7 +182,6 @@
         </div>
       </div>
 
-      <!-- Xinghe Chen -->
       <div class="person-card">
         <img src="img/xinghe_chen.jpg" alt="Xinghe Chen" class="person-photo">
         <div class="person-info">
@@ -197,7 +191,6 @@
         </div>
       </div>
 
-      <!-- Fahong Zhang -->
       <div class="person-card">
         <img src="img/fahong_zhang.jpg" alt="Fahong Zhang" class="person-photo">
         <div class="person-info">
@@ -207,7 +200,6 @@
         </div>
       </div>
 
-      <!-- Li Ge -->
       <div class="person-card">
         <img src="img/li_ge.jpg" alt="Li Ge" class="person-photo">
         <div class="person-info">
@@ -217,7 +209,6 @@
         </div>
       </div>
 
-      <!-- Weitao Feng -->
       <div class="person-card">
         <img src="img/weitao_feng.jpg" alt="Weitao Feng" class="person-photo">
         <div class="person-info">
@@ -227,7 +218,6 @@
         </div>
       </div>
 
-      <!-- Hao Ding -->
       <div class="person-card">
         <img src="img/hao_ding.jpg" alt="Hao Ding" class="person-photo">
         <div class="person-info">
@@ -237,7 +227,6 @@
         </div>
       </div>
 
-      <!-- Kuncan Wang -->
       <div class="person-card">
         <img src="img/kuncan_wang.jpg" alt="Kuncan Wang" class="person-photo">
         <div class="person-info">
@@ -247,7 +236,6 @@
         </div>
       </div>
 
-      <!-- Yige Jiang -->
       <div class="person-card">
         <img src="img/yige_jiang.jpg" alt="Yige Jiang" class="person-photo">
         <div class="person-info">
@@ -259,7 +247,7 @@
       </div>
     </div>
 
-    <!-- ========== Research Staffs ========== -->
+    <!-- Research Staffs -->
     <h2>Research Staffs</h2>
     <div class="card-group">
       <div class="person-card">
@@ -272,7 +260,7 @@
       </div>
     </div>
 
-    <!-- ========== Visiting Students ========== -->
+    <!-- Visiting Students -->
     <h2>Visiting Students</h2>
     <div class="visiting-students">
       <ul>
@@ -283,7 +271,7 @@
       </ul>
     </div>
 
-    <!-- ========== Alumni ========== -->
+    <!-- Alumni -->
     <h2 class="alumni-section">
       Alumni <span class="alumni-icon">+</span>
     </h2>
