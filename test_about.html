@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wei Dong – Nanyang Assistant Professor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* 全局 */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #222;
+      background: #fff;
+    }
+    a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /* 导航条 */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+    }
+    .navbar-links a {
+      font-size: 1.05em;
+      font-weight: 500;
+      color: #222;
+      margin-left: 32px;
+      transition: color 0.2s;
+    }
+    .navbar-links a.active {
+      color: #0066a1;
+    }
+    .navbar-links a:hover {
+      color: #00507e;
+    }
+    /* 内容容器 */
+    .container {
+      max-width: 780px;
+      margin: 80px auto;
+      padding: 0 24px;
+    }
+    /* 标题 */
+    h1 {
+      font-size: 2.6em;
+      font-weight: 550;
+      margin: 0 0 0.3em;
+      line-height: 1.2;
+    }
+    h2 {
+      font-size: 1.8em;
+      margin: 1.2em 0 0.6em;
+      padding-bottom: 0.2em;
+      border-bottom: 1px solid #eee;
+      line-height: 1.3;
+    }
+    /* 模块之间自动留白 */
+    section {
+      margin-top: 2em;
+    }
+    .profile-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      margin-top: 1em;
+      margin-bottom: 2em;
+    }
+    .profile-photo {
+      width: 160px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .info {
+      margin-bottom: 1em;
+    }
+    p {
+      margin: 0 0 1em;
+    }
+    ul {
+      margin: 0 0 1em 1.2em;
+    }
+    li {
+      margin-bottom: 0.6em;
+    }
+    .invite {
+      margin: 1.5em 0;
+      padding: 1em;
+      background: #fff5f5;
+      border-left: 4px solid #e63946;
+      color: #900;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <div class="navbar">
+    <img src="img/ntu_logo.png" alt="NTU Logo" style="height:50px">
+    <div class="navbar-links">
+      <a href="/" class="active">About</a>
+      <a href="publications.html">Publications</a>
+      <a href="people.html">People</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Wei DONG</h1>
+    <div class="profile-header">
+      <img src="img/wei_dong_photo.png" alt="Wei Dong" class="profile-photo">
+      <div>
+        <div class="info">
+          <strong>Nanyang Assistant Professor</strong><br>
+          <a href="https://www.ntu.edu.sg/computing/" target="_blank">College of Computing and Data Science</a><br>
+          <a href="https://www.ntu.edu.sg/" target="_blank">Nanyang Technological University</a><br>
+          Block N4, 02b-69b<br>
+          50 Nanyang Ave<br>
+          <a href="https://weidong.hk/weidong/Thesis.pdf" target="_blank">Ph.D. Thesis</a><br>
+          Email: wei_dong AT ntu DOT edu DOT sg
+        </div>
+        <div>
+          <p>
+            I am currently a Nanyang Assistant Professor starting Fall 2024. Previously, I was a postdoctoral fellow at
+            <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a> co-supervised by
+            <a href="https://elaineshi.com/" target="_blank">Prof. Elaine Shi</a> and
+            <a href="https://gfanti.github.io/website/" target="_blank">Prof. Giulia Fanti</a>.
+            Before that, I received my PhD from the
+            <a href="https://cse.hkust.edu.hk/" target="_blank">CSE department</a> of
+            <a href="https://hkust.edu.hk/" target="_blank">HKUST</a>, advised by
+            <a href="https://www.cse.ust.hk/~yike/" target="_blank">Prof. Ke Yi</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="invite">
+      I am looking for highly motivated Postdocs, Research Assistants, Ph.D. students (Fall 2026), and
+      Visiting Interns to join my group. Start dates for non-Ph.D. positions are flexible. If you are interested,
+      please send me an email with your CV attached!
+    </div>
+
+    <section>
+      <h2>Research Interests</h2>
+      <p>
+        My research interests include data privacy and security, privacy-preserving AI, and the security of
+        large language models (LLMs) and AI systems.
+      </p>
+
+      <h2>Selected Awards</h2>
+      <ul>
+        <li>SIGMOD Jim Gray Doctoral Dissertation Award Runner-up 2024, ACM SIGMOD</li>
+        <li>Best PhD Dissertation Award 2023, CSE, HKUST</li>
+        <li>SENG PhD Research Excellence Award 2023, School of Engineering, HKUST</li>
+        <li>ACM SIGMOD Research Highlight Award 2023, ACM SIGMOD</li>
+        <li>ACM SIGMOD Best Paper Award 2022, ACM SIGMOD</li>
+        <li>Hong Kong PhD Fellowship 2018–2022, RGC of Hong Kong</li>
+      </ul>
+
+      <h2>Service</h2>
+      <ul>
+        <li><strong>PC Member:</strong> ICDE 2024, Usenix Security 2025, VLDB 2026, Usenix Security 2026, SIGMOD 2026</li>
+      </ul>
+
+      <h2>Teaching</h2>
+      <ul>
+        <li><strong>SD6123 – Data Privacy in Data Science:</strong> 2024/25 Spring</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
