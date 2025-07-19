@@ -11,7 +11,7 @@
 
   <style>
     /* ----------  Typography baseline  ---------- */
-    :root { --base-font-size: 17px; }          /* easy to tweak later */
+    :root { --base-font-size: 17px; }
 
     html { font-size: var(--base-font-size); }
 
@@ -24,8 +24,8 @@
                    "Helvetica Neue", Helvetica, Arial,
                    "Microsoft YaHei", sans-serif;
       font-weight: 400;
-      line-height: 1.72;                       /* 行间距 */
-      letter-spacing: 0.011em;                 /* 微调字距 */
+      line-height: 1.72;
+      letter-spacing: 0.011em;
       color: #222;
       background: #fff;
       -webkit-font-smoothing: antialiased;
@@ -36,13 +36,13 @@
 
     /* ----------  Headings  ---------- */
     h1 {
-      font-size: 2.4rem;   /* ≈ 41 px on 17 px base */
+      font-size: 2.4rem;
       font-weight: 700;
       line-height: 1.25;
       margin: 0 0 0.35em;
     }
     h2 {
-      font-size: 1.45rem;  /* ≈ 25 px */
+      font-size: 1.45rem;
       font-weight: 600;
       line-height: 1.35;
       margin: 2rem 0 1rem;
@@ -53,9 +53,9 @@
     /* ----------  Paragraphs & lists  ---------- */
     p  { margin: 0 0 1.15rem; }
     ul { margin: 0 0 1.15rem 1.3rem; padding: 0; }
-    li { margin-bottom: 0.1rem; }
+    li { margin-bottom: 0.45rem; }
 
-    /* ----------  Layout (unchanged except spacing tweaks)  ---------- */
+    /* ----------  Layout  ---------- */
     .navbar {
       position: sticky; top: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -70,7 +70,7 @@
     .navbar-links a.active { color: #0066a1; }
     .navbar-links a:hover  { color: #00507e; }
 
-    .container { max-width: 780px; margin: 16px auto; padding: 0 24px; }
+    .container { max-width: 780px; margin: 80px auto; padding: 0 24px; }
     section    { margin-top: 2.2rem; }
 
     .profile-header {
@@ -82,15 +82,17 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
+    /* ----------  Gentle recruiting notice  ---------- */
     .invite {
       margin: 1.8rem 0;
       padding: 1rem;
-      background: #fff5f5;
-      border-left: 4px solid #e63946;
-      color: #900;
+      background: #f5f9ff;          /* soft blue */
+      border-left: 4px solid #0077b6;
+      color: #044d73;               /* dark blue text */
       line-height: 1.55;
     }
 
+    /* ----------  Research list ---------- */
     .research-list { list-style: disc; margin: 0 0 1.6rem 1.3rem; }
     .research-list li { margin-bottom: 0.9rem; line-height: 1.5; }
     .research-list li strong {
@@ -142,15 +144,16 @@
     </div>
 
     <div class="invite">
-      I am looking for highly motivated Postdocs, Research Assistants, Ph.D. students (Fall 2026), and Visiting Interns to join my group.
-      Start dates for non-Ph.D. positions are flexible. If you are interested, please send me an email with your CV attached!
+      I am looking for highly motivated Post-docs, Research Assistants, Ph.D. students (Fall 2026), and Visiting Interns to join my group.
+      Start dates for non-Ph.D. positions are flexible.  
+      If you are interested, please send me an email with your CV attached!
     </div>
 
     <!-- ---------- Research Interests ---------- -->
     <section>
       <h2>Research Interests</h2>
       <p>
-        My research interests include data privacy and security, privacy-preserving AI, and the security of large language models (LLMs) and AI systems.
+        My research interests include data privacy and security, privacy-preserving AI, and the security of large-language-model (LLM) systems.
       </p>
       <ul class="research-list">
         <li>
