@@ -18,7 +18,7 @@
       margin:0;
       font-family:"Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Helvetica Neue",Helvetica,Arial,"Microsoft YaHei",sans-serif;
       font-weight:400;
-      line-height:1.58;          /* slightly tighter */
+      line-height:1.58;
       letter-spacing:0.011em;
       color:#222;
       background:#fff;
@@ -30,21 +30,26 @@
 
     /* ───── Headings ───── */
     h1{
-      font-size:2.8rem;          /* ≈ 47 px */
+      font-size:2.8rem;
       font-weight:700;
       line-height:1.22;
       margin:0 0 2.1rem;
     }
+    /* bigger top margin => more space between sections */
     h2{
-      font-size:1.7rem;          /* ≈ 29 px */
+      font-size:1.7rem;
       font-weight:600;
       line-height:1.34;
-      margin:2rem 0 0.9rem;
+      margin:3rem 0 1.2rem;
       padding-bottom:0.25rem;
       border-bottom:1px solid #eee;
     }
 
-    /* ───── Layout ───── */
+    /* ───── Lists ───── */
+    ul{margin:0 0 1.5rem 1.3rem;padding:0;}  /* deeper bottom gap */
+    li{margin-bottom:0.45rem;}
+
+    /* ───── Navbar ───── */
     .navbar{
       position:sticky;top:0;z-index:100;
       display:flex;align-items:center;justify-content:space-between;
@@ -87,16 +92,11 @@
     .person-info .cosupervision{color:#666;font-size:0.9rem;margin-bottom:3px;}
     .person-info .degree{color:#888;font-size:0.85rem;}
 
-    /* ───── Visitor & alumni lists ───── */
-    .visiting-students ul,
-    .alumni-list ul{margin:0 0 1rem 1.3rem;padding:0;}
-    .visiting-students li,
-    .alumni-list li{margin-bottom:0.45rem;}
-
+    /* ───── Alumni heading style ───── */
     .alumni-section{
       display:flex;align-items:center;gap:8px;
       font-size:1.7rem;font-weight:600;line-height:1.34;
-      margin:2rem 0 0.9rem;
+      margin:3rem 0 1.2rem;       /* match h2 spacing */
       padding-bottom:0.25rem;border-bottom:1px solid #eee;
     }
     .alumni-icon{
@@ -161,7 +161,7 @@
     <!-- ========== PhD Students ========== -->
     <h2>PhD Students</h2>
     <div class="card-group">
-      <!-- Yihua Hu -->
+      <!-- (student cards unchanged) -->
       <div class="person-card">
         <img src="img/yihua_hu.jpg" alt="Yihua Hu" class="person-photo">
         <div class="person-info">
@@ -171,7 +171,6 @@
         </div>
       </div>
 
-      <!-- Xinghe Chen -->
       <div class="person-card">
         <img src="img/xinghe_chen.jpg" alt="Xinghe Chen" class="person-photo">
         <div class="person-info">
@@ -181,7 +180,6 @@
         </div>
       </div>
 
-      <!-- Fahong Zhang -->
       <div class="person-card">
         <img src="img/fahong_zhang.jpg" alt="Fahong Zhang" class="person-photo">
         <div class="person-info">
@@ -191,7 +189,6 @@
         </div>
       </div>
 
-      <!-- Li Ge -->
       <div class="person-card">
         <img src="img/li_ge.jpg" alt="Li Ge" class="person-photo">
         <div class="person-info">
@@ -201,7 +198,6 @@
         </div>
       </div>
 
-      <!-- Weitao Feng -->
       <div class="person-card">
         <img src="img/weitao_feng.jpg" alt="Weitao Feng" class="person-photo">
         <div class="person-info">
@@ -211,7 +207,6 @@
         </div>
       </div>
 
-      <!-- Hao Ding -->
       <div class="person-card">
         <img src="img/hao_ding.jpg" alt="Hao Ding" class="person-photo">
         <div class="person-info">
@@ -221,7 +216,6 @@
         </div>
       </div>
 
-      <!-- Kuncan Wang -->
       <div class="person-card">
         <img src="img/kuncan_wang.jpg" alt="Kuncan Wang" class="person-photo">
         <div class="person-info">
@@ -231,7 +225,6 @@
         </div>
       </div>
 
-      <!-- Yige Jiang -->
       <div class="person-card">
         <img src="img/yige_jiang.jpg" alt="Yige Jiang" class="person-photo">
         <div class="person-info">
