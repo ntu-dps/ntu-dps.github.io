@@ -7,8 +7,8 @@
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -48,14 +48,12 @@
       border-bottom: 1px solid #ddd;
     }
     .ntu-logo {
-      height: 64px;
+      height: 50px;
     }
-    /* 包装在右侧的按钮+链接 */
     .nav-right {
       display: flex;
       align-items: center;
     }
-    /* 链接 */
     .navbar-links a {
       font-size: 1.20rem;
       font-weight: 500;
@@ -63,16 +61,12 @@
       margin-left: 32px;
       transition: color 0.18s;
     }
-    .navbar-links a.active {
-      color: #0066a1;
-    }
-    .navbar-links a:hover {
-      color: #00507e;
-    }
+    .navbar-links a.active { color: #0066a1; }
+    .navbar-links a:hover { color: #00507e; }
 
-    /* 折叠按钮（汉堡/叉号） */
+    /* 默认隐藏汉堡按钮 */
     .menu-toggle {
-      display: none;       /* 默认桌面隐藏 */
+      display: none;
       font-size: 1.6em;
       background: none;
       border: none;
@@ -82,17 +76,15 @@
 
     /* 手机折叠菜单 */
     @media (max-width: 600px) {
-      /* 显示按钮 */
       .menu-toggle {
         display: block;
         z-index: 200;
       }
-      /* 链接脱离流 */
       .navbar-links {
         display: none;
         position: absolute;
         top: 100%;
-        right: 24px;       /* 与 navbar 右 padding 对齐 */
+        right: 24px;
         width: 180px;
         flex-direction: column;
         background: #fff;
@@ -107,14 +99,6 @@
       }
       .navbar-links a:last-child {
         border-bottom: none;
-      }
-      /* 打开时显示 */
-      .navbar.open .menu-toggle {
-        /* 切换按钮文字为叉号 */
-        color: #222;
-      }
-      .navbar.open .menu-toggle::after {
-        content: "✕";
       }
       .navbar.open .navbar-links {
         display: flex;
@@ -138,7 +122,7 @@
     }
 
     /* ───── Paragraphs & lists ───── */
-    p { margin: 0 0 1.15rem; }
+    p  { margin: 0 0 1.15rem; }
     ul { margin: 0 0 1.15rem 1.3rem; padding: 0; }
     li { margin-bottom: 0.001rem; }
 
@@ -204,14 +188,13 @@
   <div class="container">
     <h1>Wei DONG</h1>
 
-    <!-- Profile photo + info -->
     <img src="img/wei_dong_photo.png" alt="Wei Dong" class="profile-photo">
     <div class="info">
       <strong>Nanyang Assistant Professor</strong><br>
       <a href="https://www.ntu.edu.sg/computing/" target="_blank">
         College of Computing and Data Science
       </a><br>
-      <a href="https://www.ntu.edu.sg/" target="_blank" >
+      <a href="https://www.ntu.edu.sg/" target="_blank">
         Nanyang Technological University
       </a><br>
       Block N4, 02b-69b<br>
@@ -222,7 +205,6 @@
       Email: wei_dong AT ntu DOT edu DOT sg
     </div>
 
-    <!-- Biography paragraph -->
     <p>
       I am currently a Nanyang Assistant Professor starting Fall 2024. Previously,
       I was a post-doctoral fellow at
@@ -236,7 +218,6 @@
       <a href="https://www.cse.ust.hk/~yike/" target="_blank">Prof. Ke Yi</a>.
     </p>
 
-    <!-- Recruiting banner -->
     <div class="invite">
       I am looking for highly motivated Post-docs, Research Assistants, Ph.D. students
       (Fall 2026), and Visiting Interns to join my group. Start dates for non-Ph.D.
@@ -244,7 +225,6 @@
       your CV attached!
     </div>
 
-    <!-- Research interests -->
     <section>
       <h2>Research Interests</h2>
       <p>
@@ -261,8 +241,7 @@
         <li>
           <strong>Privacy-Preserving AI</strong>
           We leverage differential privacy (DP), secure multi-party computation (MPC),
-          and zero-knowledge proofs (ZKP) to protect privacy across the entire AI lifecycle—
-          from data collection and training to deployment and inference.
+          and zero-knowledge proofs (ZKP) to protect privacy across the entire AI lifecycle—from data collection and training to deployment and inference.
         </li>
         <li>
           <strong>LLM and AI Security</strong>
@@ -273,7 +252,6 @@
       </ul>
     </section>
 
-    <!-- Awards -->
     <h2>Selected Awards</h2>
     <ul>
       <li>SIGMOD Jim Gray Doctoral Dissertation Award Runner-up 2024</li>
@@ -284,26 +262,25 @@
       <li>Hong Kong PhD Fellowship 2018–2022</li>
     </ul>
 
-    <!-- Service -->
     <h2>Service</h2>
     <ul>
       <li><strong>PC Member:</strong> ICDE 2024, Usenix Security 2025, VLDB 2026,
           Usenix Security 2026, SIGMOD 2026</li>
     </ul>
 
-    <!-- Teaching -->
     <h2>Teaching</h2>
     <ul>
       <li><strong>SD6123 – Data Privacy in Data Science:</strong> 2024/25 Spring</li>
     </ul>
   </div>
 
-  <!-- 脚本：切换 .open 来展开/收起菜单 -->
+  <!-- 切换菜单与图标 -->
   <script>
     const btn = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.navbar');
     btn.addEventListener('click', () => {
-      nav.classList.toggle('open');
+      const opened = nav.classList.toggle('open');
+      btn.textContent = opened ? '✕' : '☰';
     });
   </script>
 </body>
