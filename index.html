@@ -28,58 +28,27 @@
     a{color:#0077b6;text-decoration:none;}
     a:hover{text-decoration:underline;}
 
-    /* 默认隐藏折叠菜单按钮 */
-    .menu-toggle {
-      display: none;
-      font-size: 1.6em;
-      background: none;
-      border: none;
-      cursor: pointer;
-      margin-left:  auto;
-    }
-    
-    /* 窄屏时隐藏横排链接，显示按钮 */
-    @media (max-width: 600px) {
-      .menu-toggle {
-        display: block;
-      }
-      .navbar-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #fff;
-        border-top: 1px solid #ddd;
-      }
-      .navbar-links a {
-        margin: 12px 24px;
-        padding: 8px 0;
-        border-bottom: 1px solid #eee;
-      }
-      .navbar.open .navbar-links {
-        display: flex;
-      }
-    }
-
     /* ───── Headings ───── */
     h1{
-      font-size:2.8rem;          /* ≈ 47 px */
+      font-size:2.8rem;
       font-weight:700;
       line-height:1.22;
       margin:0 0 0.9rem;
     }
+    /* bigger top margin = larger gap before each new section */
     h2{
-      font-size:1.7rem;          /* ≈ 29 px */
+      font-size:1.7rem;
       font-weight:600;
       line-height:1.34;
-      margin:2rem 0 1rem;
+      margin:3rem 0 1.2rem;      /* ↑ top, ↑ bottom */
       padding-bottom:0.25rem;
       border-bottom:1px solid #eee;
     }
 
     /* ───── Paragraphs & lists ───── */
-    p  { margin:0 0 1.15rem; }
-    ul { margin:0 0 1.15rem 1.3rem; padding:0; }
-    li { margin-bottom:0.001rem; }
+    p  { margin:0 0 1.5rem; }     /* slightly larger bottom gap */
+    ul { margin:0 0 1.5rem 1.3rem; padding:0; }
+    li { margin-bottom:0.45rem; }
 
     /* ───── Navbar ───── */
     .navbar{
@@ -96,18 +65,25 @@
     .navbar-links a.active{color:#0066a1;}
     .navbar-links a:hover{color:#00507e;}
 
+    /* hamburger */
+    .menu-toggle{display:none;font-size:1.6em;background:none;border:none;cursor:pointer;margin-left:auto;}
+    @media(max-width:600px){
+      .menu-toggle{display:block;}
+      .navbar-links{display:none;flex-direction:column;width:100%;background:#fff;border-top:1px solid #ddd;}
+      .navbar-links a{margin:12px 24px;padding:8px 0;border-bottom:1px solid #eee;}
+      .navbar.open .navbar-links{display:flex;}
+    }
+
     .container{max-width:780px;margin:16px auto;padding:0 24px;}
 
-    /* ───── Profile photo wraps text ───── */
     .profile-photo{
-      float:left;                /* makes text wrap around */
+      float:left;
       width:160px;
       border-radius:6px;
       box-shadow:0 2px 8px rgba(0,0,0,0.06);
-      margin:0 32px 12px 0;      /* right & bottom gap */
+      margin:0 32px 12px 0;
     }
 
-    /* ───── Recruiting banner ───── */
     .invite{
       margin:1.8rem 0;
       padding:1rem;
@@ -117,7 +93,6 @@
       line-height:1.55;
     }
 
-    /* ───── Research list ───── */
     .research-list{list-style:disc;margin:0 0 1.6rem 1.3rem;}
     .research-list li{margin-bottom:0.9rem;line-height:1.5;}
     .research-list li strong{display:block;font-weight:600;margin-bottom:0.25rem;}
@@ -127,9 +102,7 @@
 <body>
   <!-- Navigation -->
   <div class="navbar">
-<!--     menu -->
     <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-    
     <img src="img/ntu_logo.png" alt="NTU Logo" style="height:64px">
     <div class="navbar-links">
       <a href="/" class="active">About</a>
@@ -142,7 +115,6 @@
   <div class="container">
     <h1>Wei DONG</h1>
 
-    <!-- Profile photo + intro text -->
     <img src="img/wei_dong_photo.png" alt="Wei Dong" class="profile-photo">
 
     <div class="info">
@@ -166,11 +138,9 @@
       <a href="https://www.cse.ust.hk/~yike/" target="_blank">Prof. Ke Yi</a>.
     </p>
 
-    <!-- Recruiting banner -->
     <div class="invite">
       I am looking for highly motivated Post-docs, Research Assistants, Ph.D. students (Fall 2026), and Visiting Interns to join my group.
-      Start dates for non-Ph.D. positions are flexible.  
-      If you are interested, please send me an email with your CV attached!
+      Start dates for non-Ph.D. positions are flexible. If you are interested, please email me your CV.
     </div>
 
     <!-- Research interests -->
@@ -222,10 +192,8 @@
   <script>
     document.querySelector('.menu-toggle')
       .addEventListener('click', () => {
-        document.querySelector('.navbar')
-                .classList.toggle('open');
+        document.querySelector('.navbar').classList.toggle('open');
       });
   </script>
-
 </body>
 </html>
