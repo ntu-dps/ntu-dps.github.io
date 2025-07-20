@@ -121,6 +121,10 @@
       padding-bottom: 0.25rem;
       border-bottom: 1px solid #eee;
     }
+    /* 只作用于第一个 h2（紧挨 h1） */
+    h1 + h2 {
+      margin-top: 1rem;      /* 把原来的 3rem 缩小到 1rem */
+    }
 
     /* ───── Lists ───── */
     ul {
