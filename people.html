@@ -87,10 +87,8 @@
       .navbar-links a:last-child { border-bottom: none; }
       .navbar.open .navbar-links { display: flex; }
 
-      /* ——— ONE card per row on phones ——— */
-      .card-group .person-card {
-        flex: 1 0 100%;   /* full‑width block */
-      }
+      /* one person-card per row on phones */
+      .card-group .person-card { flex: 0 0 100%; }
     }
 
     /* ——— Headings ——— */
@@ -108,7 +106,7 @@
       padding-bottom: 0.25rem;
       border-bottom: 1px solid #eee;
     }
-    h1 + h2 { margin-top: 1rem; }
+    h1 + h2 { margin-top: 1rem; } /* first h2 after h1 */
 
     /* ——— Lists & layout ——— */
     ul { margin: 0 0 1.5rem 1.3rem; padding: 0; }
@@ -122,7 +120,7 @@
     /* ——— Profile cards ——— */
     .card-group { display: flex; flex-wrap: wrap; gap: 24px; }
     .person-card {
-      flex: 0 0 calc(50% - 24px);
+      flex: 0 0 calc(50% - 24px);     /* two per row by default (laptop) */
       box-sizing: border-box;
       display: flex;
       align-items: center;
@@ -142,7 +140,7 @@
     .person-info h3 a { color: inherit; }
     .person-info .period,
     .person-info .cosupervision { color: #666; font-size: 0.9rem; margin-bottom: 3px; }
-    .person-info .degree { color: #888; font-size: 0.82rem; }
+    .person-info .degree { color: #888; font-size: 0.82rem; } /* education line */
 
     /* ——— Alumni heading ——— */
     .alumni-section {
@@ -180,13 +178,32 @@
     <!-- Research Fellows -->
     <h2>Research Fellows</h2>
     <div class="card-group">
-      <!-- sample fellow card (rest unchanged) -->
       <div class="person-card">
         <img src="img/lixu_wang.jpg" alt="Lixu Wang" class="person-photo">
         <div class="person-info">
-          <h3><a href="#" target="_blank">Dr Lixu Wang</a></h3>
+          <h3><a href="https://conditionwang.github.io/" target="_blank" rel="noopener">Dr Lixu Wang</a></h3>
           <div class="period">January 2025 – Present</div>
           <div class="degree">PhD, Northwestern University</div>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <img src="img/peizhuo_lv.jpg" alt="Peizhuo Lv" class="person-photo">
+        <div class="person-info">
+          <h3><a href="https://sites.google.com/view/lvpeizhuo/" target="_blank" rel="noopener">Dr Peizhuo Lv</a></h3>
+          <div class="cosupervision">Co-supervised with Xiaofeng Wang and Tianwei Zhang</div>
+          <div class="period">March 2025 – Present</div>
+          <div class="degree">PhD, Chinese Academy of Sciences</div>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <img src="img/xinfeng_li.jpg" alt="Xinfeng Li" class="person-photo">
+        <div class="person-info">
+          <h3><a href="https://letterligo.github.io/" target="_blank" rel="noopener">Dr Xinfeng Li</a></h3>
+          <div class="cosupervision">Co-supervised with Xiaofeng Wang</div>
+          <div class="period">November 2024 – Present</div>
+          <div class="degree">PhD, Zhejiang University</div>
         </div>
       </div>
     </div>
@@ -194,7 +211,6 @@
     <!-- PhD Students -->
     <h2>PhD Students</h2>
     <div class="card-group">
-      <!-- sample student card (rest unchanged) -->
       <div class="person-card">
         <img src="img/yihua_hu.jpg" alt="Yihua Hu" class="person-photo">
         <div class="person-info">
@@ -203,7 +219,99 @@
           <div class="degree">MS, Columbia University</div>
         </div>
       </div>
+
+      <div class="person-card">
+        <img src="img/xinghe_chen.jpg" alt="Xinghe Chen" class="person-photo">
+        <div class="person-info">
+          <h3>Xinghe Chen</h3>
+          <div class="period">August 2024 – Present</div>
+          <div class="degree">MS, Columbia University</div>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <img src="img/fahong_zhang.jpg" alt="Fahong Zhang" class="person-photo">
+        <div class="person-info">
+          <h3>Fahong Zhang</h3>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">MS, Xi'an Jiaotong University</div>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <img src="img/li_ge.jpg" alt="Li Ge" class="person-photo">
+        <div class="person-info">
+          <h3>Li Ge</h3>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">ME, Shanghai Jiao Tong University</div>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <img src="img/weitao_feng.jpg" alt="Weitao Feng" class="person-photo">
+        <div class="person-info">
+          <h3>Weitao Feng</h3>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">ME, University of Science and Technology of China</div>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <img src="img/hao_ding.jpg" alt="Hao Ding" class="person-photo">
+        <div class="person-info">
+          <h3>Hao Ding</h3>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">MS, Nanyang Technological University</div>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <img src="img/kuncan_wang.jpg" alt="Kuncan Wang" class="person-photo">
+        <div class="person-info">
+          <h3>Kuncan Wang</h3>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">BE, East China Normal University</div>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <img src="img/yige_jiang.jpg" alt="Yige Jiang" class="person-photo">
+        <div class="person-info">
+          <h3>Yige Jiang</h3>
+          <div class="cosupervision">Co-supervised with Siqiang Luo</div>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">BE, CUHK-SZ</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Research Staff -->
+    <h2>Research Staff</h2>
+    <div class="card-group">
+      <div class="person-card">
+        <img src="img/siyi_wang.jpg" alt="Siyi Wang" class="person-photo">
+        <div class="person-info">
+          <h3>Siyi Wang</h3>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">BE, Wuhan University</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visiting Students -->
+    <h2>Visiting Students</h2>
+    <ul>
+      <li><strong>Xiaojia Xu</strong>, January 2025 – Present (Renmin University of China)</li>
+      <li><strong>Feng Wang</strong>, April 2025 – Present (Beihang University)</li>
+      <li><strong>Jiarui Yuan</strong>, July 2025 – Present (Southeast University)</li>
+      <li><strong>Hongkun Yang</strong>, July 2025 – Present (Ocean University of China)</li>
+    </ul>
+
+    <!-- Alumni -->
+    <h2 class="alumni-section">Alumni</h2>
+    <ul>
+      <li><strong>Kai Chen</strong> – Visiting PhD, April 2025 – July 2025 (Nanjing University)</li>
+    </ul>
   </div>
 
   <!-- Navbar toggle -->
