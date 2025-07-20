@@ -1,38 +1,39 @@
-f<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>Wei Dong – Nanyang Assistant Professor</title>
+  <title>Publications – Wei Dong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ───── Base typography ───── */
     :root { --base-font-size: 17px; }
-    html  { font-size: var(--base-font-size); }
+    html { font-size: var(--base-font-size); }
+
     body {
       margin: 0;
-      font-family:
-        "Source Sans Pro",
-        -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-        "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+      font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                   "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
       font-weight: 400;
-      line-height: 1.58;
+      line-height: 1.72;
       letter-spacing: 0.011em;
       color: #222;
       background: #fff;
       -webkit-font-smoothing: antialiased;
     }
+
     a { color: #0077b6; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ───── Navbar ───── */
+    h1 { font-size: 2.8rem; font-weight: 700; line-height: 1.22; margin: 0 0 .9rem; }
+    h2 { font-size: 1.7rem; font-weight: 600; line-height: 1.34; margin: 3rem 0 1.2rem;
+         padding-bottom: .25rem; border-bottom: 1px solid #eee; }
+    h3 { font-size: 1.18rem; font-weight: 600; margin: 1.8rem 0 .8rem; }
+
+    /* Responsive navbar styles */
     .navbar {
       position: sticky;
       top: 0;
@@ -47,239 +48,197 @@ f<!DOCTYPE html>
       background: #fff;
       border-bottom: 1px solid #ddd;
     }
-    .ntu-logo {
+
+    .navbar-logo img {
       height: 64px;
     }
-    .nav-right {
+
+    .navbar-links {
       display: flex;
       align-items: center;
+      gap: 32px;
     }
+
     .navbar-links a {
-      font-size: 1.20rem;
+      font-size: 1.2rem;
       font-weight: 500;
       color: #222;
-      margin-left: 32px;
-      transition: color 0.18s;
+      transition: color .18s;
     }
+
     .navbar-links a.active { color: #0066a1; }
     .navbar-links a:hover { color: #00507e; }
 
-    /* 默认隐藏汉堡按钮 */
+    /* Hamburger menu */
     .menu-toggle {
       display: none;
-      font-size: 1.6em;
-      background: none;
-      border: none;
+      flex-direction: column;
+      justify-content: center;
       cursor: pointer;
-      padding: 4px;
     }
 
-    /* 手机折叠菜单 */
-    @media (max-width: 600px) {
-      .menu-toggle {
-        display: block;
-        z-index: 200;
-      }
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #333;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    #menu-checkbox {
+      display: none;
+    }
+
+    @media (max-width: 720px) {
       .navbar-links {
-        display: none;
         position: absolute;
-        top: 100%;
-        right: 24px;
-        width: 180px;
+        top: 68px;
+        left: 0;
+        right: 0;
         flex-direction: column;
         background: #fff;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        border-radius: 4px;
-        overflow: hidden;
+        border-top: 1px solid #ddd;
+        display: none;
       }
+
       .navbar-links a {
-        margin: 0;
-        padding: 12px 16px;
-        border-bottom: 1px solid #eee;
+        margin: 12px 0;
       }
-      .navbar-links a:last-child {
-        border-bottom: none;
+
+      #menu-checkbox:checked + .navbar-links {
+        display: flex;
       }
-      .navbar.open .navbar-links {
+
+      .menu-toggle {
         display: flex;
       }
     }
 
-    /* ───── Headings ───── */
-    h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      line-height: 1.22;
-      margin: 0 0 0.9rem;
-    }
-    h2 {
-      font-size: 1.7rem;
-      font-weight: 600;
-      line-height: 1.34;
-      margin: 3.5rem 0 1rem;
-      padding-bottom: 0.25rem;
-      border-bottom: 1px solid #eee;
-    }
-
-    /* ───── Paragraphs & lists ───── */
-    p  { margin: 0 0 1.15rem; }
-    ul { margin: 0 0 1.15rem 1.3rem; padding: 0; }
-    li { margin-bottom: 0.01rem; }
-
-    /* ───── Container ───── */
     .container {
       max-width: 780px;
-      margin: 16px auto;
+      margin: 16px auto 90px;
       padding: 0 24px;
     }
 
-    /* ───── Profile photo ───── */
-    .profile-photo {
-      float: left;
-      width: 160px;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      margin: 0 32px 12px 0;
+    .note {
+      font-size: .93rem;
+      color: #555;
+      margin-bottom: 2.2rem;
     }
 
-    /* ───── Recruiting banner ───── */
-    .invite {
-      margin: 1.8rem 0;
-      padding: 1rem;
-      background: #f5f9ff;
-      border-left: 4px solid #0077b6;
-      color: #044d73;
-      line-height: 1.55;
-    }
-
-    /* ───── Research list ───── */
-    .research-list {
-      list-style: disc;
-      margin: 0 0 1.6rem 1.3rem;
-    }
-    .research-list li {
-      margin-bottom: 0.9rem;
-      line-height: 1.5;
-    }
-    .research-list li strong {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
+    ul { margin: 0 0 1.5rem 1.3rem; padding: 0; }
+    li { margin-bottom: .55rem; }
   </style>
 </head>
 
 <body>
   <!-- Navigation -->
   <div class="navbar">
-    <img src="img/ntu_logo.png" alt="NTU Logo" class="ntu-logo">
+    <div class="navbar-logo">
+      <img src="img/ntu_logo.png" alt="NTU Logo">
+    </div>
 
-    <div class="nav-right">
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-      <div class="navbar-links">
-        <a href="/" class="active">About</a>
-        <a href="publications.html">Publications</a>
-        <a href="people.html">People</a>
-      </div>
+    <!-- Hamburger toggle for mobile -->
+    <label for="menu-checkbox" class="menu-toggle">
+      <span></span><span></span><span></span>
+    </label>
+    <input type="checkbox" id="menu-checkbox" hidden />
+
+    <!-- Navigation links -->
+    <div class="navbar-links">
+      <a href="/">About</a>
+      <a href="publications.html" class="active">Publications</a>
+      <a href="people.html">People</a>
     </div>
   </div>
 
-  <!-- Main content -->
   <div class="container">
-    <h1>Wei DONG</h1>
-
-    <img src="img/wei_dong_photo.png" alt="Wei Dong" class="profile-photo">
-    <div class="info">
-      <strong>Nanyang Assistant Professor</strong><br>
-      <a href="https://www.ntu.edu.sg/computing/" target="_blank">
-        College of Computing and Data Science
-      </a><br>
-      <a href="https://www.ntu.edu.sg/" target="_blank">
-        Nanyang Technological University
-      </a><br>
-      Block N4, 02b-69b<br>
-      50 Nanyang Ave<br>
-      <a href="https://weidong.hk/weidong/Thesis.pdf" target="_blank">
-        Ph.D. Thesis
-      </a><br>
-      Email: wei_dong AT ntu DOT edu DOT sg
-    </div>
-    <br>
-    <p>
-      I am currently a Nanyang Assistant Professor starting Fall 2024. Previously,
-      I was a post-doctoral fellow at
-      <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>,
-      co-supervised by
-      <a href="https://elaineshi.com/" target="_blank">Prof. Elaine Shi</a> and
-      <a href="https://gfanti.github.io/website/" target="_blank">Prof. Giulia Fanti</a>.
-      Before that, I received my PhD from the
-      <a href="https://cse.hkust.edu.hk/" target="_blank">CSE Department</a> of
-      <a href="https://hkust.edu.hk/" target="_blank">HKUST</a>, advised by
-      <a href="https://www.cse.ust.hk/~yike/" target="_blank">Prof. Ke Yi</a>.
+    <h1>Publications</h1>
+    <p class="note">
+      <em>Note:</em> Authors marked with <strong>*</strong> are corresponding authors.
+      <u>Underline</u> indicates my student or post-doc.
     </p>
 
-    <div class="invite">
-      I am looking for highly motivated Post-docs, Research Assistants, Ph.D. students
-      (Fall 2026), and Visiting Interns to join my group. Start dates for non-Ph.D.
-      positions are flexible. If you are interested, please email me your CV!
-    </div>
-
-    <section>
-      <h2>Research Interests</h2>
-      <p>
-        My research interests include data privacy and security, privacy-preserving AI, and LLM&AI security.
-      </p>
-      <ul class="research-list">
-        <li>
-          <strong>Data Privacy and Security</strong>
-          We design differential-privacy mechanisms for a wide range of data-analytics
-          tasks, aiming to safeguard privacy in analytical outcomes. Our focus is on
-          solutions that are both theoretically sound and empirically effective.
-        </li>
-        <li>
-          <strong>Privacy-Preserving AI</strong>
-          We leverage differential privacy (DP), secure multi-party computation (MPC),
-          and zero-knowledge proofs (ZKP) to protect privacy across the entire AI lifecycle—from data collection and training to deployment and inference.
-        </li>
-        <li>
-          <strong>LLM and AI Security</strong>
-          We study security and misuse challenges associated with large language models,
-          including preserving privacy in LLM applications, protecting LLM intellectual
-          property, defending against malicious uses, and using LLMs to enhance system security.
-        </li>
-      </ul>
-    </section>
-
-    <h2>Selected Awards</h2>
+ <!-- Journal papers -->
+    <h2>Selected Journal Papers</h2>
     <ul>
-      <li>SIGMOD Jim Gray Doctoral Dissertation Award Runner-up 2024</li>
-      <li>Best PhD Dissertation Award 2023, CSE, HKUST</li>
-      <li>SENG PhD Research Excellence Award 2023, HKUST</li>
-      <li>ACM SIGMOD Research Highlight Award 2023</li>
-      <li>ACM SIGMOD Best Paper Award 2022</li>
-      <li>Hong Kong PhD Fellowship 2018–2022</li>
+      <li>
+        <strong>Wei Dong</strong>, Juanru Fang, Ke Yi, Yuchao Tao, Ashwin Machanavajjhala.
+        “Instance-optimal Truncation for Differentially Private Query Evaluation with Foreign Keys.”
+        <strong>TODS</strong>, Nov 2024.
+        <a href="https://dl.acm.org/doi/10.1145/3697831" target="_blank">[pdf]</a>
+      </li>
+      <li>
+        <strong>Wei Dong</strong>, Ke Yi.
+        “Query Evaluation under Differential Privacy.”
+        <strong>SIGMOD Rec.</strong>, 52 (3): 6-17, Nov 2023.
+        <a href="https://sigmodrecord.org/publications/sigmodRecord/2309/pdfs/03_Principles_Dong.pdf" target="_blank">[pdf]</a>
+      </li>
     </ul>
 
-    <h2>Service</h2>
+    <!-- Conference papers -->
+    <h2>Selected Conference Papers</h2>
+
+    <h3>Data Privacy and Security</h3>
     <ul>
-      <li><strong>PC Member:</strong> ICDE 2024, Usenix Security 2025, VLDB 2026,
-          Usenix Security 2026, SIGMOD 2026</li>
+      <li>Qiyao Luo, Jianzhe Yu, <strong>Wei Dong*</strong>, Quanqing Xu, Chuanhui Yang, Ke Yi.  
+          “Answer Counting Queries Efficiently under Shuffle Differential Privacy.”  
+          <strong>SIGMOD</strong>, Jun 2025. <a href="https://dl.acm.org/doi/abs/10.1145/3725415" target="_blank">[pdf]</a></li>
+
+      <li>Dajun Sun, <strong>Wei Dong*</strong>, Yuan Qiu, Ke Yi.  
+          “Personalized Truncation for Personalized Privacy.”  
+          <strong>SIGMOD</strong>, Jun 2025. <a href="https://dl.acm.org/doi/10.1145/3698825" target="_blank">[pdf]</a></li>
+
+      <li><strong>Wei Dong</strong>, Qiyao Luo, Giulia Fanti, Elaine Shi, Ke Yi.  
+          “Almost Instance-optimal Clipping for Summation Problems in the Shuffle Model of Differential Privacy.”  
+          <strong>CCS</strong>, Oct 2024. <a href="https://dl.acm.org/doi/pdf/10.1145/3658644.3690225" target="_blank">[pdf]</a></li>
+
+      <li><strong>Wei Dong</strong>, Zijun Chen, Qiyao Luo, Elaine Shi, Ke Yi.  
+          “Continual Observation of Joins under Differential Privacy.”  
+          <strong>SIGMOD</strong>, Jun 2024. <a href="https://www.cse.ust.hk/~yike/DynamicJoinDP.pdf" target="_blank">[pdf]</a></li>
+
+      <li><strong>Wei Dong</strong>, Dajun Sun, Ke Yi.  
+          “Better than Composition: How to Answer Multiple Relational Queries under Differential Privacy.”  
+          <strong>SIGMOD</strong>, Jun 2023. <a href="https://www.cse.ust.hk/~yike/MQDP.pdf" target="_blank">[pdf]</a></li>
+
+      <li><strong>Wei Dong</strong>, Ke Yi.  
+          “Universal Private Estimators.”  
+          <strong>PODS</strong>, Jun 2023. <a href="https://www.cse.ust.hk/~yike/UniversalPE.pdf" target="_blank">[pdf]</a></li>
+
+      <li><strong>Wei Dong</strong>, Qiyao Luo, Ke Yi.  
+          “Continual Observation under User-level Differential Privacy.”  
+          <strong>S&amp;P</strong>, May 2023. <a href="https://www.cse.ust.hk/~yike/StreamUDP.pdf" target="_blank">[pdf]</a></li>
+
+      <li><strong>Wei Dong</strong>, Yuting Liang, Ke Yi.  
+          “Differentially Private Covariance Revisited.”  
+          <strong>NeurIPS</strong>, Nov 2022. <a href="https://arxiv.org/pdf/2205.14324" target="_blank">[full]</a></li>
+
+      <li><strong>Wei Dong</strong>, Juanru Fang, Ke Yi, Yuchao Tao, Ashwin Machanavajjhala.  
+          “R2T: Instance-optimal Truncation for Differentially Private Query Evaluation with Foreign Keys.”  
+          <strong>SIGMOD</strong>, Jun 2022. <a href="https://www.cse.ust.hk/~yike/R2T.pdf" target="_blank">[pdf]</a>
+          <a href="https://github.com/hkustDB/Race-to-the-Top" target="_blank">[code]</a> <strong>(Best Paper)</strong></li>
+
+      <li><strong>Wei Dong</strong>, Ke Yi.  
+          “A Nearly Instance-optimal Differentially Private Mechanism for Conjunctive Queries.”  
+          <strong>PODS</strong>, Jun 2022. <a href="https://www.cse.ust.hk/~yike/DP-CQ.pdf" target="_blank">[full]</a></li>
+
+      <li><strong>Wei Dong</strong>, Ke Yi.  
+          “Residual Sensitivity for Differentially Private Multi-Way Joins.”  
+          <strong>SIGMOD</strong>, Jun 2021. <a href="https://www.cse.ust.hk/~yike/ResidualSensitivity-full.pdf" target="_blank">[full]</a>
+          <a href="https://github.com/hkustDB/ResidualSensitivity" target="_blank">[code]</a></li>
     </ul>
 
-    <h2>Teaching</h2>
+    <h3>LLM and AI Security</h3>
     <ul>
-      <li><strong>SD6123 – Data Privacy in Data Science:</strong> 2024/25 Spring</li>
+      <li><u>Lixu Wang*</u>, Bingqi Shang*, Yi Li, Payal Mohapatra, <strong>Wei Dong</strong>, Xiao Wang, Qi Zhu.  
+          “Split Adaptation for Pre-trained Vision Transformers.”  
+          <strong>CVPR</strong>, Jun 2025. <a href="https://arxiv.org/abs/2503.00441" target="_blank">[pdf]</a></li>
+
+      <li><u>Lixu Wang*</u>, Chenxi Liu*, Junfeng Guo, Qingqing Ye, Heng Huang, Haibo Hu, <strong>Wei Dong</strong>.  
+          “Federated Continuous Category Discovery and Learning.”  
+          <strong>ICCV</strong>, Oct 2025.</li>
     </ul>
+
   </div>
-
-  <!-- 切换菜单与图标 -->
-  <script>
-    const btn = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.navbar');
-    btn.addEventListener('click', () => {
-      const opened = nav.classList.toggle('open');
-      btn.textContent = opened ? '✕' : '☰';
-    });
-  </script>
 </body>
 </html>
