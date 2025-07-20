@@ -7,102 +7,206 @@
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
     /* ───── Base typography ───── */
     :root { --base-font-size: 17px; }
     html  { font-size: var(--base-font-size); }
+    body {
+      margin: 0;
+      font-family:
+        "Source Sans Pro",
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+      font-weight: 400;
+      line-height: 1.58;
+      letter-spacing: 0.011em;
+      color: #222;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #0077b6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    body{
-      margin:0;
-      font-family:"Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Helvetica Neue",Helvetica,Arial,"Microsoft YaHei",sans-serif;
-      font-weight:400;
-      line-height:1.58;
-      letter-spacing:0.011em;
-      color:#222;
-      background:#fff;
-      -webkit-font-smoothing:antialiased;
+    /* ───── Navbar ───── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 780px;
+      margin: 0 auto;
+      height: 68px;
+      padding: 0 24px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .ntu-logo {
+      height: 64px;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-links a {
+      font-size: 1.20rem;
+      font-weight: 500;
+      color: #222;
+      margin-left: 32px;
+      transition: color 0.18s;
+    }
+    .navbar-links a.active {
+      color: #0066a1;
+    }
+    .navbar-links a:hover {
+      color: #00507e;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.6em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
     }
 
-    a{color:#0077b6;text-decoration:none;}
-    a:hover{text-decoration:underline;}
+    @media (max-width: 600px) {
+      .menu-toggle {
+        display: block;
+        z-index: 200;
+      }
+      .navbar-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 24px;
+        width: 180px;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .navbar-links a {
+        margin: 0;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+      }
+      .navbar-links a:last-child {
+        border-bottom: none;
+      }
+      .navbar.open .navbar-links {
+        display: flex;
+      }
+    }
 
     /* ───── Headings ───── */
-    h1{
-      font-size:2.8rem;
-      font-weight:700;
-      line-height:1.22;
-      margin:0 0 2.1rem;
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.22;
+      margin: 0 0 2.1rem;
     }
-    /* bigger top margin => more space between sections */
-    h2{
-      font-size:1.7rem;
-      font-weight:600;
-      line-height:1.34;
-      margin:3.5rem 0 1.2rem;
-      padding-bottom:0.25rem;
-      border-bottom:1px solid #eee;
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      line-height: 1.34;
+      margin: 3.5rem 0 1.2rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid #eee;
     }
 
     /* ───── Lists ───── */
-    ul{margin:0 0 1.5rem 1.3rem;padding:0;}  /* deeper bottom gap */
-    li{margin-bottom:0.45rem;}
-
-    /* ───── Navbar ───── */
-    .navbar{
-      position:sticky;top:0;z-index:100;
-      display:flex;align-items:center;justify-content:space-between;
-      max-width:780px;margin:0 auto;
-      height:68px;padding:0 24px;
-      background:#fff;border-bottom:1px solid #ddd;
+    ul {
+      margin: 0 0 1.5rem 1.3rem;
+      padding: 0;
     }
-    .navbar-links a{
-      font-size:1.20rem;font-weight:500;color:#222;
-      margin-left:32px;transition:color 0.18s;
+    li {
+      margin-bottom: 0.45rem;
     }
-    .navbar-links a.active{color:#0066a1;}
-    .navbar-links a:hover{color:#00507e;}
 
-    .container{max-width:780px;margin:16px auto 90px;padding:0 24px;}
+    /* ───── Container ───── */
+    .container {
+      max-width: 780px;
+      margin: 16px auto 90px;
+      padding: 0 24px;
+    }
 
     /* ───── People cards ───── */
-    .card-group{display:flex;flex-wrap:wrap;gap:24px;}
-    .person-card{
-      flex:0 0 calc(50% - 24px);
-      box-sizing:border-box;
-      display:flex;align-items:center;gap:20px;
-      margin-bottom:18px;
-      padding:16px;
-      background:#fafafa;
-      border:1px solid #e0e0e0;border-radius:8px;
+    .card-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
     }
-    .person-photo{
-      width:70px;height:90px;
-      border-radius:50%/60%;object-fit:cover;
+    .person-card {
+      flex: 0 0 calc(50% - 24px);
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 16px;
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
     }
-    .person-info h3{
-      margin:0 0 7px 0;
-      font-size:1.2rem;font-weight:600;
+    .person-photo {
+      width: 70px;
+      height: 90px;
+      border-radius: 50%/60%;
+      object-fit: cover;
     }
-    .person-info h3 a{color:inherit;text-decoration:none;}
-    .person-info h3 a:hover{text-decoration:underline;}
-
+    .person-info h3 {
+      margin: 0 0 7px;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .person-info h3 a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .person-info h3 a:hover {
+      text-decoration: underline;
+    }
     .person-info .period,
-    .person-info .cosupervision{color:#666;font-size:0.9rem;margin-bottom:3px;}
-    .person-info .degree{color:#888;font-size:0.85rem;}
+    .person-info .cosupervision {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 3px;
+    }
+    .person-info .degree {
+      color: #888;
+      font-size: 0.85rem;
+    }
 
     /* ───── Alumni heading style ───── */
-    .alumni-section{
-      display:flex;align-items:center;gap:8px;
-      font-size:1.7rem;font-weight:600;line-height:1.34;
-      margin:3rem 0 1.2rem;       /* match h2 spacing */
-      padding-bottom:0.25rem;border-bottom:1px solid #eee;
+    .alumni-section {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.7rem;
+      font-weight: 600;
+      line-height: 1.34;
+      margin: 3rem 0 1.2rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid #eee;
     }
-    .alumni-icon{
-      width:20px;height:20px;background:#ccc;border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      color:#fff;font-weight:bold;font-size:14px;
+    .alumni-icon {
+      width: 20px;
+      height: 20px;
+      background: #ccc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -110,11 +214,14 @@
 <body>
   <!-- Navigation -->
   <div class="navbar">
-    <img src="img/ntu_logo.png" alt="NTU Logo" style="height:64px">
-    <div class="navbar-links">
-      <a href="/">About</a>
-      <a href="publications.html">Publications</a>
-      <a href="people.html" class="active">People</a>
+    <img src="img/ntu_logo.png" alt="NTU Logo" class="ntu-logo">
+    <div class="nav-right">
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <div class="navbar-links">
+        <a href="/">About</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html" class="active">People</a>
+      </div>
     </div>
   </div>
 
@@ -122,10 +229,10 @@
   <div class="container">
     <h1>People</h1>
 
-    <!-- ========== Research Fellows ========== -->
+    <!-- Research Fellows -->
     <h2>Research Fellows</h2>
     <div class="card-group">
-      <!-- Xinfeng Li -->
+      <!-- Dr. Xinfeng Li -->
       <div class="person-card">
         <img src="img/xinfeng_li.jpg" alt="Dr. Xinfeng Li" class="person-photo">
         <div class="person-info">
@@ -135,8 +242,7 @@
           <div class="degree">(PhD, Zhejiang University)</div>
         </div>
       </div>
-
-      <!-- Lixu Wang -->
+      <!-- Dr. Lixu Wang -->
       <div class="person-card">
         <img src="img/lixu_wang.jpg" alt="Dr. Lixu Wang" class="person-photo">
         <div class="person-info">
@@ -145,8 +251,7 @@
           <div class="degree">(PhD, Northwestern University)</div>
         </div>
       </div>
-
-      <!-- Peizhuo Lv -->
+      <!-- Dr. Peizhuo Lv -->
       <div class="person-card">
         <img src="img/peizhuo_lv.jpg" alt="Dr. Peizhuo Lv" class="person-photo">
         <div class="person-info">
@@ -158,10 +263,10 @@
       </div>
     </div>
 
-    <!-- ========== PhD Students ========== -->
+    <!-- PhD Students -->
     <h2>PhD Students</h2>
     <div class="card-group">
-      <!-- (student cards unchanged) -->
+      <!-- Yihua Hu -->
       <div class="person-card">
         <img src="img/yihua_hu.jpg" alt="Yihua Hu" class="person-photo">
         <div class="person-info">
@@ -170,7 +275,7 @@
           <div class="degree">(MS, Columbia University)</div>
         </div>
       </div>
-
+      <!-- Xinghe Chen -->
       <div class="person-card">
         <img src="img/xinghe_chen.jpg" alt="Xinghe Chen" class="person-photo">
         <div class="person-info">
@@ -179,7 +284,7 @@
           <div class="degree">(MS, Columbia University)</div>
         </div>
       </div>
-
+      <!-- Fahong Zhang -->
       <div class="person-card">
         <img src="img/fahong_zhang.jpg" alt="Fahong Zhang" class="person-photo">
         <div class="person-info">
@@ -188,8 +293,7 @@
           <div class="degree">(MS, XJTU)</div>
         </div>
       </div>
-
-      <div class="person-card">
+            <div class="person-card">
         <img src="img/li_ge.jpg" alt="Li Ge" class="person-photo">
         <div class="person-info">
           <h3>Li Ge</h3>
@@ -235,7 +339,7 @@
         </div>
       </div>
     </div>
-
+    
     <!-- ========== Research Staffs ========== -->
     <h2>Research Staffs</h2>
     <div class="card-group">
@@ -248,19 +352,17 @@
         </div>
       </div>
     </div>
-
-    <!-- ========== Visiting Students ========== -->
+    
+    <!-- Visiting Students -->
     <h2>Visiting Students</h2>
-    <div class="visiting-students">
-      <ul>
-        <li><strong>Xiaojia Xu</strong>, Jan 2025 – Present (Renmin University of China)</li>
-        <li><strong>Feng Wang</strong>, Apr 2025 – Present (Beihang University)</li>
-        <li><strong>Jiarui Yuan</strong>, Jul 2025 – Present (Eastsouth University)</li>
-        <li><strong>Hongkun Yang</strong>, Jul 2025 – Present (Ocean University of China)</li>
-      </ul>
-    </div>
+    <ul>
+      <li><strong>Xiaojia Xu</strong>, Jan 2025 – Present (Renmin University of China)</li>
+      <li><strong>Feng Wang</strong>, Apr 2025 – Present (Beihang University)</li>
+      <li><strong>Jiarui Yuan</strong>, Jul 2025 – Present (Eastsouth University)</li>
+      <li><strong>Hongkun Yang</strong>, Jul 2025 – Present (Ocean University of China)</li>
+    </ul>
 
-    <!-- ========== Alumni ========== -->
+    <!-- Alumni -->
     <h2 class="alumni-section">
       Alumni
     </h2>
@@ -269,6 +371,17 @@
         <li><strong>Kai Chen</strong> (Visiting PhD), Apr 2025 – Jul 2025 (Nanjing University)</li>
       </ul>
     </div>
+
   </div>
+
+  <!-- 脚本：切换汉堡 / 叉叉 & 展开 / 收起菜单 -->
+  <script>
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.navbar');
+    btn.addEventListener('click', () => {
+      const opened = nav.classList.toggle('open');
+      btn.textContent = opened ? '✕' : '☰';
+    });
+  </script>
 </body>
 </html>
