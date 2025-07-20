@@ -29,21 +29,8 @@
     a:hover{text-decoration:underline;}
 
     /* ───── Headings ───── */
-    h1{
-      font-size:2.8rem;
-      font-weight:700;
-      line-height:1.22;
-      margin:0 0 0.9rem;
-    }
-    /* bigger top margin = larger gap before each new section */
-    h2{
-      font-size:1.7rem;
-      font-weight:600;
-      line-height:1.34;
-      margin:3rem 0 1.2rem;
-      padding-bottom:0.25rem;
-      border-bottom:1px solid #eee;
-    }
+    h1{font-size:2.8rem;font-weight:700;line-height:1.22;margin:0 0 0.9rem;}
+    h2{font-size:1.7rem;font-weight:600;line-height:1.34;margin:3rem 0 1.2rem;padding-bottom:0.25rem;border-bottom:1px solid #eee;}
 
     /* ───── Paragraphs & lists ───── */
     p  { margin:0 0 1.5rem; }
@@ -55,40 +42,21 @@
       position:sticky;top:0;z-index:100;
       display:flex;align-items:center;justify-content:space-between;
       max-width:780px;margin:0 auto;
-      height:64px;padding:0 20px;
+      height:68px;padding:0 24px;
       background:#fff;border-bottom:1px solid #ddd;
     }
-    .navbar-links{display:flex;gap:32px;align-items:center;}
+    .navbar-links{display:flex;align-items:center;}
     .navbar-links a{
-      font-size:1.15rem;font-weight:500;color:#222;
-      transition:color 0.18s;
+      font-size:1.20rem;font-weight:500;color:#222;
+      margin-left:32px;transition:color 0.18s;
     }
     .navbar-links a.active{color:#0066a1;}
     .navbar-links a:hover{color:#00507e;}
 
     /* hamburger */
-    .menu-toggle{display:none;font-size:1.8rem;background:none;border:none;cursor:pointer;margin-left:auto;color:#222;}
+    .menu-toggle{display:none;font-size:1.6em;background:none;border:none;cursor:pointer;margin-left:auto;}
 
-    /* ───── Responsive nav ───── */
-    @media(max-width:600px){
-      .menu-toggle{display:block;}
-      .navbar-links{
-        position:absolute;left:0;top:64px; /* just beneath navbar */
-        width:100%;
-        flex-direction:column;
-        background:#fff;
-        border-top:1px solid #ddd;
-        display:none; /* default closed */
-      }
-      .navbar-links a{
-        width:100%;
-        padding:12px 24px;
-        margin:0;
-        border-bottom:1px solid #eee;
-      }
-      .navbar.open .navbar-links{display:flex;}
-    }
-
+    /* ───── Layout container ───── */
     .container{max-width:780px;margin:16px auto;padding:0 24px;}
 
     .profile-photo{
@@ -99,32 +67,50 @@
       margin:0 32px 12px 0;
     }
 
-    .invite{
-      margin:1.8rem 0;
-      padding:1rem;
-      background:#f5f9ff;
-      border-left:4px solid #0077b6;
-      color:#044d73;
-      line-height:1.55;
-    }
-
+    .invite{margin:1.8rem 0;padding:1rem;background:#f5f9ff;border-left:4px solid #0077b6;color:#044d73;line-height:1.55;}
     .research-list{list-style:disc;margin:0 0 1.6rem 1.3rem;}
     .research-list li{margin-bottom:0.9rem;line-height:1.5;}
     .research-list li strong{display:block;font-weight:600;margin-bottom:0.25rem;}
+
+    /* ───── Mobile adjustments ───── */
+    @media(max-width:600px){
+      .menu-toggle{display:block;}
+
+      /* hide desktop links initially */
+      .navbar-links{
+        display:none;
+        position:fixed;
+        top:68px;right:0;
+        width:78%;
+        max-width:240px;
+        flex-direction:column;
+        background:#fff;
+        border-left:1px solid #ddd;
+        box-shadow:-2px 0 8px rgba(0,0,0,0.05);
+        height:calc(100% - 68px);
+        overflow-y:auto;
+      }
+      .navbar-links a{
+        margin:12px 24px;
+        padding:10px 0;
+        border-bottom:1px solid #eee;
+      }
+      .navbar.open .navbar-links{display:flex;}
+    }
   </style>
 </head>
 
 <body>
   <!-- Navigation -->
-  <nav class="navbar" role="navigation">
-    <img src="img/ntu_logo.png" alt="NTU Logo" style="height:48px">
-    <button class="menu-toggle" aria-label="折叠菜单" aria-expanded="false">☰</button>
-    <div class="navbar-links" id="navLinks">
+  <div class="navbar">
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <img src="img/ntu_logo.png" alt="NTU Logo" style="height:64px">
+    <div class="navbar-links">
       <a href="/" class="active">About</a>
       <a href="publications.html">Publications</a>
       <a href="people.html">People</a>
     </div>
-  </nav>
+  </div>
 
   <!-- Main content -->
   <div class="container">
@@ -143,8 +129,8 @@
     </div>
     <br>
     <p>
-      I am currently a Nanyang Assistant Professor starting Fall 2024. Previously, I was a post‑doctoral fellow at
-      <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, co‑supervised by
+      I am currently a Nanyang Assistant Professor starting Fall 2024. Previously, I was a post-doctoral fellow at
+      <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, co-supervised by
       <a href="https://elaineshi.com/" target="_blank">Prof. Elaine Shi</a> and
       <a href="https://gfanti.github.io/website/" target="_blank">Prof. Giulia Fanti</a>.
       Before that, I received my PhD from the
@@ -154,25 +140,36 @@
     </p>
 
     <div class="invite">
-      I am looking for highly motivated Post‑docs, Research Assistants, Ph.D. students (Fall 2026), and Visiting Interns to join my group.
-      Start dates for non‑Ph.D. positions are flexible. If you are interested, please email me your CV.
+      I am looking for highly motivated Post-docs, Research Assistants, Ph.D. students (Fall 2026), and Visiting Interns to join my group.
+      Start dates for non-Ph.D. positions are flexible. If you are interested, please email me your CV.
     </div>
 
     <!-- Research interests -->
     <section>
       <h2>Research Interests</h2>
-      <p>My research interests include data privacy and security, privacy‑preserving AI, and the security of large‑language‑model (LLM) systems.</p>
+      <p>
+        My research interests include data privacy and security, privacy-preserving AI, and the security of large-language-model (LLM) systems.
+      </p>
       <ul class="research-list">
-        <li><strong>Data Privacy and Security</strong> We design differential‑privacy mechanisms for a wide range of data‑analytics tasks, aiming to safeguard privacy in analytical outcomes. Our focus is on solutions that are both theoretically sound and empirically effective.</li>
-        <li><strong>Privacy‑Preserving AI</strong> We leverage differential privacy (DP), secure multi‑party computation (MPC), and zero‑knowledge proofs (ZKP) to protect privacy across the entire AI lifecycle—from data collection and training to deployment and inference.</li>
-        <li><strong>LLM and AI Security</strong> We study security and misuse challenges associated with large language models, including preserving privacy in LLM applications, protecting LLM intellectual property, defending against malicious uses, and using LLMs to enhance system security.</li>
+        <li>
+          <strong>Data Privacy and Security</strong>
+          We design differential-privacy mechanisms for a wide range of data-analytics tasks, aiming to safeguard privacy in analytical outcomes. Our focus is on solutions that are both theoretically sound and empirically effective.
+        </li>
+        <li>
+          <strong>Privacy-Preserving AI</strong>
+          We leverage differential privacy (DP), secure multi-party computation (MPC), and zero-knowledge proofs (ZKP) to protect privacy across the entire AI lifecycle—from data collection and training to deployment and inference.
+        </li>
+        <li>
+          <strong>LLM and AI Security</strong>
+          We study security and misuse challenges associated with large language models, including preserving privacy in LLM applications, protecting LLM intellectual property, defending against malicious uses, and using LLMs to enhance system security.
+        </li>
       </ul>
     </section>
 
     <!-- Awards -->
     <h2>Selected Awards</h2>
     <ul>
-      <li>SIGMOD Jim Gray Doctoral Dissertation Award Runner‑up 2024</li>
+      <li>SIGMOD Jim Gray Doctoral Dissertation Award Runner-up 2024</li>
       <li>Best PhD Dissertation Award 2023, CSE, HKUST</li>
       <li>SENG PhD Research Excellence Award 2023, HKUST</li>
       <li>ACM SIGMOD Research Highlight Award 2023</li>
@@ -194,13 +191,13 @@
   </div>
 
   <script>
-    const nav = document.querySelector('.navbar');
-    const btn = document.querySelector('.menu-toggle');
+    const navToggle = document.querySelector('.menu-toggle');
+    const navbar    = document.querySelector('.navbar');
 
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('open');
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
+      navToggle.setAttribute('aria-expanded', !expanded);
+      navbar.classList.toggle('open');
     });
   </script>
 </body>
