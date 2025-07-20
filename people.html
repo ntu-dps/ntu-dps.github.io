@@ -7,13 +7,10 @@
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ───── Base typography ───── */
+    /* ───── Typography & global styles ───── */
     :root { --base-font-size: 17px; }
     html  { font-size: var(--base-font-size); }
     body {
@@ -47,13 +44,8 @@
       background: #fff;
       border-bottom: 1px solid #ddd;
     }
-    .ntu-logo {
-      height: 64px;
-    }
-    .nav-right {
-      display: flex;
-      align-items: center;
-    }
+    .ntu-logo { height: 64px; }
+    .nav-right { display: flex; align-items: center; }
     .navbar-links a {
       font-size: 1.20rem;
       font-weight: 500;
@@ -61,12 +53,8 @@
       margin-left: 32px;
       transition: color 0.18s;
     }
-    .navbar-links a.active {
-      color: #0066a1;
-    }
-    .navbar-links a:hover {
-      color: #00507e;
-    }
+    .navbar-links a.active { color: #0066a1; }
+    .navbar-links a:hover  { color: #00507e; }
     .menu-toggle {
       display: none;
       font-size: 1.6em;
@@ -76,11 +64,9 @@
       padding: 4px;
     }
 
+    /* ───── Mobile navbar (≤ 600 px) ───── */
     @media (max-width: 600px) {
-      .menu-toggle {
-        display: block;
-        z-index: 200;
-      }
+      .menu-toggle { display: block; z-index: 200; }
       .navbar-links {
         display: none;
         position: absolute;
@@ -98,12 +84,8 @@
         padding: 12px 16px;
         border-bottom: 1px solid #eee;
       }
-      .navbar-links a:last-child {
-        border-bottom: none;
-      }
-      .navbar.open .navbar-links {
-        display: flex;
-      }
+      .navbar-links a:last-child { border-bottom: none; }
+      .navbar.open .navbar-links { display: flex; }
     }
 
     /* ───── Headings ───── */
@@ -121,33 +103,22 @@
       padding-bottom: 0.25rem;
       border-bottom: 1px solid #eee;
     }
-    /* 只作用于第一个 h2（紧挨 h1） */
-    h1 + h2 {
-      margin-top: 1rem;      /* 把原来的 3rem 缩小到 1rem */
-    }
+    /* Reduce top gap only for the first h2 following h1 */
+    h1 + h2 { margin-top: 1rem; }
 
     /* ───── Lists ───── */
-    ul {
-      margin: 0 0 1.5rem 1.3rem;
-      padding: 0;
-    }
-    li {
-      margin-bottom: 0.45rem;
-    }
+    ul { margin: 0 0 1.5rem 1.3rem; padding: 0; }
+    li { margin-bottom: 0.45rem; }
 
-    /* ───── Container ───── */
+    /* ───── Layout container ───── */
     .container {
       max-width: 780px;
       margin: 16px auto 90px;
       padding: 0 24px;
     }
 
-    /* ───── People cards ───── */
-    .card-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
+    /* ───── Profile cards ───── */
+    .card-group { display: flex; flex-wrap: wrap; gap: 24px; }
     .person-card {
       flex: 0 0 calc(50% - 24px);
       box-sizing: border-box;
@@ -162,33 +133,16 @@
     .person-photo {
       width: 70px;
       height: 90px;
-      border-radius: 50%/60%;
+      border-radius: 50% / 60%;
       object-fit: cover;
     }
-    .person-info h3 {
-      margin: 0 0 7px;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-    .person-info h3 a {
-      color: inherit;
-      text-decoration: none;
-    }
-    .person-info h3 a:hover {
-      text-decoration: underline;
-    }
+    .person-info h3 { margin: 0 0 7px; font-size: 1.2rem; font-weight: 600; }
+    .person-info h3 a { color: inherit; }
     .person-info .period,
-    .person-info .cosupervision {
-      color: #666;
-      font-size: 0.9rem;
-      margin-bottom: 3px;
-    }
-    .person-info .degree {
-      color: #888;
-      font-size: 0.85rem;
-    }
+    .person-info .cosupervision { color: #666; font-size: 0.9rem; margin-bottom: 3px; }
+    .person-info .degree { color: #888; font-size: 0.85rem; }
 
-    /* ───── Alumni heading style ───── */
+    /* ───── Alumni heading ───── */
     .alumni-section {
       display: flex;
       align-items: center;
@@ -200,25 +154,13 @@
       padding-bottom: 0.25rem;
       border-bottom: 1px solid #eee;
     }
-    .alumni-icon {
-      width: 20px;
-      height: 20px;
-      background: #ccc;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: bold;
-      font-size: 14px;
-    }
   </style>
 </head>
 
 <body>
-  <!-- Navigation -->
+  <!-- Navbar -->
   <div class="navbar">
-    <img src="img/ntu_logo.png" alt="NTU Logo" class="ntu-logo">
+    <img src="img/ntu_logo.png" alt="Nanyang Technological University Logo" class="ntu-logo">
     <div class="nav-right">
       <button class="menu-toggle" aria-label="Toggle menu">☰</button>
       <div class="navbar-links">
@@ -233,82 +175,75 @@
   <div class="container">
     <h1>People</h1>
 
-    <!-- Research Fellows -->
-    <h2>Research Fellows</h2>
+    <!-- PostDocs -->
+    <h2>PostDocs</h2>
     <div class="card-group">
-      <!-- Dr. Lixu Wang -->
       <div class="person-card">
-        <img src="img/lixu_wang.jpg" alt="Dr. Lixu Wang" class="person-photo">
+        <img src="img/lixu_wang.jpg" alt="Lixu Wang" class="person-photo">
         <div class="person-info">
-          <h3><a href="https://conditionwang.github.io/" target="_blank" rel="noopener">Dr. Lixu Wang</a></h3>
-          <div class="period">Jan 2025 – Present</div>
-          <div class="degree">(PhD, Northwestern University)</div>
+          <h3><a href="https://conditionwang.github.io/" target="_blank" rel="noopener">Dr Lixu Wang</a></h3>
+          <div class="period">January 2025 – Present</div>
+          <div class="degree">PhD, Northwestern University</div>
         </div>
       </div>
 
-      <!-- Dr. Peizhuo Lv -->
       <div class="person-card">
-        <img src="img/peizhuo_lv.jpg" alt="Dr. Peizhuo Lv" class="person-photo">
+        <img src="img/peizhuo_lv.jpg" alt="Peizhuo Lv" class="person-photo">
         <div class="person-info">
-          <h3><a href="https://sites.google.com/view/lvpeizhuo/" target="_blank" rel="noopener">Dr. Peizhuo Lv</a></h3>
-          <div class="cosupervision">Co-supervised with Xiaofeng Wang &amp; Tianwei Zhang</div>
-          <div class="period">Mar 2025 – Present</div>
-          <div class="degree">(PhD, Chinese Academy of Sciences)</div>
+          <h3><a href="https://sites.google.com/view/lvpeizhuo/" target="_blank" rel="noopener">Dr Peizhuo Lv</a></h3>
+          <div class="cosupervision">Co-supervised with Xiaofeng Wang and Tianwei Zhang</div>
+          <div class="period">March 2025 – Present</div>
+          <div class="degree">PhD, Chinese Academy of Sciences</div>
         </div>
       </div>
 
-      <!-- Dr. Xinfeng Li -->
       <div class="person-card">
-        <img src="img/xinfeng_li.jpg" alt="Dr. Xinfeng Li" class="person-photo">
+        <img src="img/xinfeng_li.jpg" alt="Xinfeng Li" class="person-photo">
         <div class="person-info">
-          <h3><a href="https://letterligo.github.io/" target="_blank" rel="noopener">Dr. Xinfeng Li</a></h3>
+          <h3><a href="https://letterligo.github.io/" target="_blank" rel="noopener">Dr Xinfeng Li</a></h3>
           <div class="cosupervision">Co-supervised with Xiaofeng Wang</div>
-          <div class="period">Nov 2024 – Present</div>
-          <div class="degree">(PhD, Zhejiang University)</div>
+          <div class="period">November 2024 – Present</div>
+          <div class="degree">PhD, Zhejiang University</div>
         </div>
       </div>
-
     </div>
-      
 
-
-
-    <!-- PhD Students -->
-    <h2>PhD Students</h2>
+    <!-- Doctoral Students -->
+    <h2>Doctoral Students</h2>
     <div class="card-group">
-      <!-- Yihua Hu -->
       <div class="person-card">
         <img src="img/yihua_hu.jpg" alt="Yihua Hu" class="person-photo">
         <div class="person-info">
           <h3>Yihua Hu</h3>
-          <div class="period">Aug 2024 – Present</div>
-          <div class="degree">(MS, Columbia University)</div>
+          <div class="period">August 2024 – Present</div>
+          <div class="degree">MS, Columbia University</div>
         </div>
       </div>
-      <!-- Xinghe Chen -->
+
       <div class="person-card">
         <img src="img/xinghe_chen.jpg" alt="Xinghe Chen" class="person-photo">
         <div class="person-info">
           <h3>Xinghe Chen</h3>
-          <div class="period">Aug 2024 – Present</div>
-          <div class="degree">(MS, Columbia University)</div>
+          <div class="period">August 2024 – Present</div>
+          <div class="degree">MS, Columbia University</div>
         </div>
       </div>
-      <!-- Fahong Zhang -->
+
       <div class="person-card">
         <img src="img/fahong_zhang.jpg" alt="Fahong Zhang" class="person-photo">
         <div class="person-info">
           <h3>Fahong Zhang</h3>
-          <div class="period">Aug 2025 – Present</div>
-          <div class="degree">(MS, XJTU)</div>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">MS, Xi'an Jiaotong University</div>
         </div>
       </div>
-            <div class="person-card">
+
+      <div class="person-card">
         <img src="img/li_ge.jpg" alt="Li Ge" class="person-photo">
         <div class="person-info">
           <h3>Li Ge</h3>
-          <div class="period">Aug 2025 – Present</div>
-          <div class="degree">(ME, SJTU)</div>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">ME, Shanghai Jiao Tong University</div>
         </div>
       </div>
 
@@ -316,8 +251,8 @@
         <img src="img/weitao_feng.jpg" alt="Weitao Feng" class="person-photo">
         <div class="person-info">
           <h3>Weitao Feng</h3>
-          <div class="period">Aug 2025 – Present</div>
-          <div class="degree">(ME, USTC)</div>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">ME, University of Science and Technology of China</div>
         </div>
       </div>
 
@@ -325,8 +260,8 @@
         <img src="img/hao_ding.jpg" alt="Hao Ding" class="person-photo">
         <div class="person-info">
           <h3>Hao Ding</h3>
-          <div class="period">Aug 2025 – Present</div>
-          <div class="degree">(MS, NTU)</div>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">MS, Nanyang Technological University</div>
         </div>
       </div>
 
@@ -334,8 +269,8 @@
         <img src="img/kuncan_wang.jpg" alt="Kuncan Wang" class="person-photo">
         <div class="person-info">
           <h3>Kuncan Wang</h3>
-          <div class="period">Aug 2025 – Present</div>
-          <div class="degree">(BE, East China Normal University)</div>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">BE, East China Normal University</div>
         </div>
       </div>
 
@@ -344,47 +279,42 @@
         <div class="person-info">
           <h3>Yige Jiang</h3>
           <div class="cosupervision">Co-supervised with Siqiang Luo</div>
-          <div class="period">Aug 2025 – Present</div>
-          <div class="degree">(BE, CUHKSZ)</div>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">BE, Chinese University of Hong Kong (Shenzhen)</div>
         </div>
       </div>
     </div>
-    
-    <!-- ========== Research Staffs ========== -->
-    <h2>Research Staffs</h2>
+
+    <!-- Research Staff -->
+    <h2>Research Staff</h2>
     <div class="card-group">
       <div class="person-card">
         <img src="img/siyi_wang.jpg" alt="Siyi Wang" class="person-photo">
         <div class="person-info">
           <h3>Siyi Wang</h3>
-          <div class="period">Aug 2025 – Present</div>
-          <div class="degree">(BE, Wuhan University)</div>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">BE, Wuhan University</div>
         </div>
       </div>
     </div>
-    
+
     <!-- Visiting Students -->
     <h2>Visiting Students</h2>
     <ul>
-      <li><strong>Xiaojia Xu</strong>, Jan 2025 – Present (Renmin University of China)</li>
-      <li><strong>Feng Wang</strong>, Apr 2025 – Present (Beihang University)</li>
-      <li><strong>Jiarui Yuan</strong>, Jul 2025 – Present (Eastsouth University)</li>
-      <li><strong>Hongkun Yang</strong>, Jul 2025 – Present (Ocean University of China)</li>
+      <li><strong>Xiaojia Xu</strong>, January 2025 – Present (Renmin University of China)</li>
+      <li><strong>Feng Wang</strong>, April 2025 – Present (Beihang University)</li>
+      <li><strong>Jiarui Yuan</strong>, July 2025 – Present (Southeast University)</li>
+      <li><strong>Hongkun Yang</strong>, July 2025 – Present (Ocean University of China)</li>
     </ul>
 
     <!-- Alumni -->
-    <h2 class="alumni-section">
-      Alumni
-    </h2>
-    <div class="alumni-list">
-      <ul>
-        <li><strong>Kai Chen</strong> (Visiting PhD), Apr 2025 – Jul 2025 (Nanjing University)</li>
-      </ul>
-    </div>
-
+    <h2 class="alumni-section">Alumni</h2>
+    <ul>
+      <li><strong>Kai Chen</strong> – Visiting PhD, April 2025 – July 2025 (Nanjing University)</li>
+    </ul>
   </div>
 
-  <!-- 脚本：切换汉堡 / 叉叉 & 展开 / 收起菜单 -->
+  <!-- Navbar toggle script -->
   <script>
     const btn = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.navbar');
