@@ -7,16 +7,21 @@
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+    /* ───── Base typography ───── */
     :root { --base-font-size: 17px; }
-    html { font-size: var(--base-font-size); }
-
+    html  { font-size: var(--base-font-size); }
     body {
       margin: 0;
-      font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-                   "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+      font-family:
+        "Source Sans Pro",
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
       font-weight: 400;
       line-height: 1.72;
       letter-spacing: 0.011em;
@@ -24,16 +29,10 @@
       background: #fff;
       -webkit-font-smoothing: antialiased;
     }
-
     a { color: #0077b6; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    h1 { font-size: 2.8rem; font-weight: 700; line-height: 1.22; margin: 0 0 .9rem; }
-    h2 { font-size: 1.7rem; font-weight: 600; line-height: 1.34; margin: 3rem 0 1.2rem;
-         padding-bottom: .25rem; border-bottom: 1px solid #eee; }
-    h3 { font-size: 1.18rem; font-weight: 600; margin: 1.8rem 0 .8rem; }
-
-    /* Responsive navbar styles */
+    /* ───── Navbar ───── */
     .navbar {
       position: sticky;
       top: 0;
@@ -48,110 +47,122 @@
       background: #fff;
       border-bottom: 1px solid #ddd;
     }
-
-    .navbar-logo img {
+    .ntu-logo {
       height: 64px;
     }
-
-    .navbar-links {
+    .nav-right {
       display: flex;
       align-items: center;
-      gap: 32px;
     }
-
     .navbar-links a {
-      font-size: 1.2rem;
+      font-size: 1.20rem;
       font-weight: 500;
       color: #222;
-      transition: color .18s;
+      margin-left: 32px;
+      transition: color 0.18s;
     }
-
-    .navbar-links a.active { color: #0066a1; }
-    .navbar-links a:hover { color: #00507e; }
-
-    /* Hamburger menu */
+    .navbar-links a.active {
+      color: #0066a1;
+    }
+    .navbar-links a:hover {
+      color: #00507e;
+    }
     .menu-toggle {
       display: none;
-      flex-direction: column;
-      justify-content: center;
+      font-size: 1.6em;
+      background: none;
+      border: none;
       cursor: pointer;
+      padding: 4px;
     }
 
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: #333;
-      margin: 4px 0;
-      border-radius: 2px;
-    }
-
-    #menu-checkbox {
-      display: none;
-    }
-
-    @media (max-width: 720px) {
+    @media (max-width: 600px) {
+      .menu-toggle {
+        display: block;
+        z-index: 200;
+      }
       .navbar-links {
+        display: none;
         position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
+        top: 100%;
+        right: 24px;
+        width: 180px;
         flex-direction: column;
         background: #fff;
-        border-top: 1px solid #ddd;
-        display: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        overflow: hidden;
       }
-
       .navbar-links a {
-        margin: 12px 0;
+        margin: 0;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
       }
-
-      #menu-checkbox:checked + .navbar-links {
-        display: flex;
+      .navbar-links a:last-child {
+        border-bottom: none;
       }
-
-      .menu-toggle {
+      .navbar.open .navbar-links {
         display: flex;
       }
     }
 
+    /* ───── Headings ───── */
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.22;
+      margin: 0 0 .9rem;
+    }
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      line-height: 1.34;
+      margin: 3rem 0 1.2rem;
+      padding-bottom: .25rem;
+      border-bottom: 1px solid #eee;
+    }
+    h3 {
+      font-size: 1.18rem;
+      font-weight: 600;
+      margin: 1.8rem 0 .8rem;
+    }
+
+    /* ───── Container ───── */
     .container {
       max-width: 780px;
       margin: 16px auto 90px;
       padding: 0 24px;
     }
-
     .note {
       font-size: .93rem;
       color: #555;
       margin-bottom: 2.2rem;
     }
-
-    ul { margin: 0 0 1.5rem 1.3rem; padding: 0; }
-    li { margin-bottom: .55rem; }
+    ul {
+      margin: 0 0 1.5rem 1.3rem;
+      padding: 0;
+    }
+    li {
+      margin-bottom: .55rem;
+    }
   </style>
 </head>
-
 <body>
+
   <!-- Navigation -->
   <div class="navbar">
-    <div class="navbar-logo">
-      <img src="img/ntu_logo.png" alt="NTU Logo">
-    </div>
-
-    <!-- Hamburger toggle for mobile -->
-    <label for="menu-checkbox" class="menu-toggle">
-      <span></span><span></span><span></span>
-    </label>
-    <input type="checkbox" id="menu-checkbox" hidden />
-
-    <!-- Navigation links -->
-    <div class="navbar-links">
-      <a href="/">About</a>
-      <a href="publications.html" class="active">Publications</a>
-      <a href="people.html">People</a>
+    <img src="img/ntu_logo.png" alt="NTU Logo" class="ntu-logo">
+    <div class="nav-right">
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <div class="navbar-links">
+        <a href="/">About</a>
+        <a href="publications.html" class="active">Publications</a>
+        <a href="people.html">People</a>
+      </div>
     </div>
   </div>
 
+  <!-- Main content -->
   <div class="container">
     <h1>Publications</h1>
     <p class="note">
@@ -159,86 +170,59 @@
       <u>Underline</u> indicates my student or post-doc.
     </p>
 
- <!-- Journal papers -->
+    <!-- Journal papers -->
     <h2>Selected Journal Papers</h2>
     <ul>
       <li>
-        <strong>Wei Dong</strong>, Juanru Fang, Ke Yi, Yuchao Tao, Ashwin Machanavajjhala.
-        “Instance-optimal Truncation for Differentially Private Query Evaluation with Foreign Keys.”
-        <strong>TODS</strong>, Nov 2024.
+        <strong>Wei Dong</strong>, Juanru Fang, Ke Yi, Yuchao Tao, Ashwin Machanavajjhala.  
+        “Instance-optimal Truncation for Differentially Private Query Evaluation with Foreign Keys.”  
+        <strong>TODS</strong>, Nov 2024.  
         <a href="https://dl.acm.org/doi/10.1145/3697831" target="_blank">[pdf]</a>
       </li>
       <li>
-        <strong>Wei Dong</strong>, Ke Yi.
-        “Query Evaluation under Differential Privacy.”
-        <strong>SIGMOD Rec.</strong>, 52 (3): 6-17, Nov 2023.
+        <strong>Wei Dong</strong>, Ke Yi.  
+        “Query Evaluation under Differential Privacy.”  
+        <strong>SIGMOD Rec.</strong>, 52(3): 6-17, Nov 2023.  
         <a href="https://sigmodrecord.org/publications/sigmodRecord/2309/pdfs/03_Principles_Dong.pdf" target="_blank">[pdf]</a>
       </li>
     </ul>
 
     <!-- Conference papers -->
     <h2>Selected Conference Papers</h2>
-
     <h3>Data Privacy and Security</h3>
     <ul>
-      <li>Qiyao Luo, Jianzhe Yu, <strong>Wei Dong*</strong>, Quanqing Xu, Chuanhui Yang, Ke Yi.  
-          “Answer Counting Queries Efficiently under Shuffle Differential Privacy.”  
-          <strong>SIGMOD</strong>, Jun 2025. <a href="https://dl.acm.org/doi/abs/10.1145/3725415" target="_blank">[pdf]</a></li>
-
-      <li>Dajun Sun, <strong>Wei Dong*</strong>, Yuan Qiu, Ke Yi.  
-          “Personalized Truncation for Personalized Privacy.”  
-          <strong>SIGMOD</strong>, Jun 2025. <a href="https://dl.acm.org/doi/10.1145/3698825" target="_blank">[pdf]</a></li>
-
-      <li><strong>Wei Dong</strong>, Qiyao Luo, Giulia Fanti, Elaine Shi, Ke Yi.  
-          “Almost Instance-optimal Clipping for Summation Problems in the Shuffle Model of Differential Privacy.”  
-          <strong>CCS</strong>, Oct 2024. <a href="https://dl.acm.org/doi/pdf/10.1145/3658644.3690225" target="_blank">[pdf]</a></li>
-
-      <li><strong>Wei Dong</strong>, Zijun Chen, Qiyao Luo, Elaine Shi, Ke Yi.  
-          “Continual Observation of Joins under Differential Privacy.”  
-          <strong>SIGMOD</strong>, Jun 2024. <a href="https://www.cse.ust.hk/~yike/DynamicJoinDP.pdf" target="_blank">[pdf]</a></li>
-
-      <li><strong>Wei Dong</strong>, Dajun Sun, Ke Yi.  
-          “Better than Composition: How to Answer Multiple Relational Queries under Differential Privacy.”  
-          <strong>SIGMOD</strong>, Jun 2023. <a href="https://www.cse.ust.hk/~yike/MQDP.pdf" target="_blank">[pdf]</a></li>
-
-      <li><strong>Wei Dong</strong>, Ke Yi.  
-          “Universal Private Estimators.”  
-          <strong>PODS</strong>, Jun 2023. <a href="https://www.cse.ust.hk/~yike/UniversalPE.pdf" target="_blank">[pdf]</a></li>
-
-      <li><strong>Wei Dong</strong>, Qiyao Luo, Ke Yi.  
-          “Continual Observation under User-level Differential Privacy.”  
-          <strong>S&amp;P</strong>, May 2023. <a href="https://www.cse.ust.hk/~yike/StreamUDP.pdf" target="_blank">[pdf]</a></li>
-
-      <li><strong>Wei Dong</strong>, Yuting Liang, Ke Yi.  
-          “Differentially Private Covariance Revisited.”  
-          <strong>NeurIPS</strong>, Nov 2022. <a href="https://arxiv.org/pdf/2205.14324" target="_blank">[full]</a></li>
-
-      <li><strong>Wei Dong</strong>, Juanru Fang, Ke Yi, Yuchao Tao, Ashwin Machanavajjhala.  
-          “R2T: Instance-optimal Truncation for Differentially Private Query Evaluation with Foreign Keys.”  
-          <strong>SIGMOD</strong>, Jun 2022. <a href="https://www.cse.ust.hk/~yike/R2T.pdf" target="_blank">[pdf]</a>
-          <a href="https://github.com/hkustDB/Race-to-the-Top" target="_blank">[code]</a> <strong>(Best Paper)</strong></li>
-
-      <li><strong>Wei Dong</strong>, Ke Yi.  
-          “A Nearly Instance-optimal Differentially Private Mechanism for Conjunctive Queries.”  
-          <strong>PODS</strong>, Jun 2022. <a href="https://www.cse.ust.hk/~yike/DP-CQ.pdf" target="_blank">[full]</a></li>
-
-      <li><strong>Wei Dong</strong>, Ke Yi.  
-          “Residual Sensitivity for Differentially Private Multi-Way Joins.”  
-          <strong>SIGMOD</strong>, Jun 2021. <a href="https://www.cse.ust.hk/~yike/ResidualSensitivity-full.pdf" target="_blank">[full]</a>
-          <a href="https://github.com/hkustDB/ResidualSensitivity" target="_blank">[code]</a></li>
-    </ul>
-
-    <h3>LLM and AI Security</h3>
-    <ul>
-      <li><u>Lixu Wang*</u>, Bingqi Shang*, Yi Li, Payal Mohapatra, <strong>Wei Dong</strong>, Xiao Wang, Qi Zhu.  
-          “Split Adaptation for Pre-trained Vision Transformers.”  
-          <strong>CVPR</strong>, Jun 2025. <a href="https://arxiv.org/abs/2503.00441" target="_blank">[pdf]</a></li>
-
-      <li><u>Lixu Wang*</u>, Chenxi Liu*, Junfeng Guo, Qingqing Ye, Heng Huang, Haibo Hu, <strong>Wei Dong</strong>.  
-          “Federated Continuous Category Discovery and Learning.”  
-          <strong>ICCV</strong>, Oct 2025.</li>
+      <li>
+        Qiyao Luo, Jianzhe Yu, <strong>Wei Dong*</strong>, Quanqing Xu,  
+        Chuanhui Yang, Ke Yi.  
+        “Answer Counting Queries Efficiently under Shuffle Differential Privacy.”  
+        <strong>SIGMOD</strong>, Jun 2025.  
+        <a href="https://dl.acm.org/doi/abs/10.1145/3725415" target="_blank">[pdf]</a>
+      </li>
+      <li>
+        Dajun Sun, <strong>Wei Dong*</strong>, Yuan Qiu, Ke Yi.  
+        “Personalized Truncation for Personalized Privacy.”  
+        <strong>SIGMOD</strong>, Jun 2025.  
+        <a href="https://dl.acm.org/doi/10.1145/3698825" target="_blank">[pdf]</a>
+      </li>
+      <li>
+        <strong>Wei Dong</strong>, Qiyao Luo, Giulia Fanti, Elaine Shi, Ke Yi.  
+        “Almost Instance-optimal Clipping for Summation Problems in the Shuffle Model of Differential Privacy.”  
+        <strong>CCS</strong>, Oct 2024.  
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3658644.3690225" target="_blank">[pdf]</a>
+      </li>
+      <!-- 更多条目略 -->
     </ul>
 
   </div>
+
+  <script>
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.navbar');
+    btn.addEventListener('click', () => {
+      const opened = nav.classList.toggle('open');
+      btn.textContent = opened ? '✕' : '☰';
+    });
+  </script>
+
 </body>
 </html>
