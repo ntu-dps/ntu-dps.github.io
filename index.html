@@ -10,102 +10,75 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ───── Base typography ───── */
+    /* ───────── Base typography ───────── */
     :root { --base-font-size: 17px; }
     html  { font-size: var(--base-font-size); }
 
     body{
       margin:0;
       font-family:"Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Helvetica Neue",Helvetica,Arial,"Microsoft YaHei",sans-serif;
-      font-weight:400;
-      line-height:1.58;
-      letter-spacing:0.011em;
-      color:#222;
-      background:#fff;
-      -webkit-font-smoothing:antialiased;
+      font-weight:400;line-height:1.58;letter-spacing:0.011em;
+      color:#222;background:#fff;-webkit-font-smoothing:antialiased;
     }
-
     a{color:#0077b6;text-decoration:none;}
     a:hover{text-decoration:underline;}
 
-    /* ───── Headings ───── */
+    /* ───────── Headings ───────── */
     h1{font-size:2.8rem;font-weight:700;line-height:1.22;margin:0 0 0.9rem;}
     h2{font-size:1.7rem;font-weight:600;line-height:1.34;margin:3rem 0 1.2rem;padding-bottom:0.25rem;border-bottom:1px solid #eee;}
 
-    /* ───── Paragraphs & lists ───── */
     p  { margin:0 0 1.5rem; }
     ul { margin:0 0 1.5rem 1.3rem; padding:0; }
     li { margin-bottom:0.45rem; }
 
-    /* ───── Navbar ───── */
+    /* ───────── Navbar ───────── */
     .navbar{
       position:sticky;top:0;z-index:100;
       display:flex;align-items:center;justify-content:space-between;
-      max-width:780px;margin:0 auto;
-      height:68px;padding:0 24px;
-      background:#fff;border-bottom:1px solid #ddd;
+      height:68px;padding:0 24px;background:#fff;border-bottom:1px solid #ddd;
     }
-    .navbar-links{display:flex;align-items:center;}
-    .navbar-links a{
-      font-size:1.20rem;font-weight:500;color:#222;
-      margin-left:32px;transition:color 0.18s;
-    }
+    .navbar img{height:54px;}
+    .navbar-links{display:flex;align-items:center;gap:32px;}
+    .navbar-links a{font-size:1.20rem;font-weight:500;color:#222;transition:color 0.18s;}
     .navbar-links a.active{color:#0066a1;}
     .navbar-links a:hover{color:#00507e;}
 
-    /* hamburger */
-    .menu-toggle{display:none;font-size:1.6em;background:none;border:none;cursor:pointer;margin-left:auto;}
+    .menu-toggle{display:none;font-size:1.7em;background:none;border:none;cursor:pointer;margin-right:8px;color:#222;}
 
-    /* ───── Layout container ───── */
-    .container{max-width:780px;margin:16px auto;padding:0 24px;}
+    /* ───────── Mobile drawer ───────── */
+    @media(max-width:600px){
+      .menu-toggle{display:block;}
 
-    .profile-photo{
-      float:left;
-      width:160px;
-      border-radius:6px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.06);
-      margin:0 32px 12px 0;
+      /* override flex layout */
+      .navbar-links{
+        position:fixed;left:0;top:68px;height:calc(100vh - 68px);
+        width:78vw;max-width:240px;
+        flex-direction:column;align-items:flex-start;
+        padding:24px 20px;background:#fff;border-right:1px solid #ddd;
+        gap:16px;
+        transform:translateX(-100%);transition:transform 0.25s ease-out;
+        box-shadow:2px 0 8px rgba(0,0,0,0.05);
+      }
+      .navbar.open .navbar-links{transform:translateX(0);}
+      .navbar-links a{margin:0;width:100%;padding:8px 4px;border-bottom:1px solid #f1f1f1;}
     }
 
+    /* ───────── Layout ───────── */
+    .container{max-width:780px;margin:16px auto;padding:0 24px;}
+    .profile-photo{float:left;width:160px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.06);margin:0 32px 12px 0;}
     .invite{margin:1.8rem 0;padding:1rem;background:#f5f9ff;border-left:4px solid #0077b6;color:#044d73;line-height:1.55;}
     .research-list{list-style:disc;margin:0 0 1.6rem 1.3rem;}
     .research-list li{margin-bottom:0.9rem;line-height:1.5;}
     .research-list li strong{display:block;font-weight:600;margin-bottom:0.25rem;}
-
-    /* ───── Mobile adjustments ───── */
-    @media(max-width:600px){
-      .menu-toggle{display:block;}
-
-      /* hide desktop links initially */
-      .navbar-links{
-        display:none;
-        position:fixed;
-        top:68px;right:0;
-        width:78%;
-        max-width:240px;
-        flex-direction:column;
-        background:#fff;
-        border-left:1px solid #ddd;
-        box-shadow:-2px 0 8px rgba(0,0,0,0.05);
-        height:calc(100% - 68px);
-        overflow-y:auto;
-      }
-      .navbar-links a{
-        margin:12px 24px;
-        padding:10px 0;
-        border-bottom:1px solid #eee;
-      }
-      .navbar.open .navbar-links{display:flex;}
-    }
   </style>
 </head>
 
 <body>
   <!-- Navigation -->
-  <div class="navbar">
+  <div class="navbar" id="navbar">
     <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <img src="img/ntu_logo.png" alt="NTU Logo" style="height:64px">
-    <div class="navbar-links">
+    <img src="img/ntu_logo.png" alt="NTU Logo">
+    <div class="navbar-links" id="navLinks">
       <a href="/" class="active">About</a>
       <a href="publications.html">Publications</a>
       <a href="people.html">People</a>
@@ -127,10 +100,10 @@
       <a href="https://weidong.hk/weidong/Thesis.pdf" target="_blank">Ph.D. Thesis</a><br>
       Email: wei_dong AT ntu DOT edu DOT sg
     </div>
-    <br>
+
     <p>
-      I am currently a Nanyang Assistant Professor starting Fall 2024. Previously, I was a post-doctoral fellow at
-      <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, co-supervised by
+      I am currently a Nanyang Assistant Professor starting Fall 2024. Previously, I was a post‑doctoral fellow at
+      <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, co‑supervised by
       <a href="https://elaineshi.com/" target="_blank">Prof. Elaine Shi</a> and
       <a href="https://gfanti.github.io/website/" target="_blank">Prof. Giulia Fanti</a>.
       Before that, I received my PhD from the
@@ -140,36 +113,25 @@
     </p>
 
     <div class="invite">
-      I am looking for highly motivated Post-docs, Research Assistants, Ph.D. students (Fall 2026), and Visiting Interns to join my group.
-      Start dates for non-Ph.D. positions are flexible. If you are interested, please email me your CV.
+      I am looking for highly motivated Post‑docs, Research Assistants, Ph.D. students (Fall 2026), and Visiting Interns to join my group.
+      Start dates for non‑Ph.D. positions are flexible. If you are interested, please email me your CV.
     </div>
 
     <!-- Research interests -->
     <section>
       <h2>Research Interests</h2>
-      <p>
-        My research interests include data privacy and security, privacy-preserving AI, and the security of large-language-model (LLM) systems.
-      </p>
+      <p>My research interests include data privacy and security, privacy‑preserving AI, and the security of large‑language‑model (LLM) systems.</p>
       <ul class="research-list">
-        <li>
-          <strong>Data Privacy and Security</strong>
-          We design differential-privacy mechanisms for a wide range of data-analytics tasks, aiming to safeguard privacy in analytical outcomes. Our focus is on solutions that are both theoretically sound and empirically effective.
-        </li>
-        <li>
-          <strong>Privacy-Preserving AI</strong>
-          We leverage differential privacy (DP), secure multi-party computation (MPC), and zero-knowledge proofs (ZKP) to protect privacy across the entire AI lifecycle—from data collection and training to deployment and inference.
-        </li>
-        <li>
-          <strong>LLM and AI Security</strong>
-          We study security and misuse challenges associated with large language models, including preserving privacy in LLM applications, protecting LLM intellectual property, defending against malicious uses, and using LLMs to enhance system security.
-        </li>
+        <li><strong>Data Privacy and Security</strong>We design differential‑privacy mechanisms for a wide range of data‑analytics tasks, aiming to safeguard privacy in analytical outcomes. Our focus is on solutions that are both theoretically sound and empirically effective.</li>
+        <li><strong>Privacy‑Preserving AI</strong>We leverage differential privacy (DP), secure multi‑party computation (MPC), and zero‑knowledge proofs (ZKP) to protect privacy across the entire AI lifecycle—from data collection and training to deployment and inference.</li>
+        <li><strong>LLM and AI Security</strong>We study security and misuse challenges associated with large language models, including preserving privacy in LLM applications, protecting LLM intellectual property, defending against malicious uses, and using LLMs to enhance system security.</li>
       </ul>
     </section>
 
     <!-- Awards -->
     <h2>Selected Awards</h2>
     <ul>
-      <li>SIGMOD Jim Gray Doctoral Dissertation Award Runner-up 2024</li>
+      <li>SIGMOD Jim Gray Doctoral Dissertation Award Runner‑up 2024</li>
       <li>Best PhD Dissertation Award 2023, CSE, HKUST</li>
       <li>SENG PhD Research Excellence Award 2023, HKUST</li>
       <li>ACM SIGMOD Research Highlight Award 2023</li>
@@ -191,12 +153,12 @@
   </div>
 
   <script>
-    const navToggle = document.querySelector('.menu-toggle');
-    const navbar    = document.querySelector('.navbar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbar = document.getElementById('navbar');
 
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true' || false;
-      navToggle.setAttribute('aria-expanded', !expanded);
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !expanded);
       navbar.classList.toggle('open');
     });
   </script>
