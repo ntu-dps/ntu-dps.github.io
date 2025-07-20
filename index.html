@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+f<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -7,81 +7,178 @@
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
-    /* ───────── Base typography ───────── */
+    /* ───── Base typography ───── */
     :root { --base-font-size: 17px; }
     html  { font-size: var(--base-font-size); }
-
-    body{
-      margin:0;
-      font-family:"Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Helvetica Neue",Helvetica,Arial,"Microsoft YaHei",sans-serif;
-      font-weight:400;line-height:1.58;letter-spacing:0.011em;
-      color:#222;background:#fff;-webkit-font-smoothing:antialiased;
+    body {
+      margin: 0;
+      font-family:
+        "Source Sans Pro",
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+      font-weight: 400;
+      line-height: 1.58;
+      letter-spacing: 0.011em;
+      color: #222;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
     }
-    a{color:#0077b6;text-decoration:none;}
-    a:hover{text-decoration:underline;}
+    a { color: #0077b6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    /* ───────── Headings ───────── */
-    h1{font-size:2.8rem;font-weight:700;line-height:1.22;margin:0 0 0.9rem;}
-    h2{font-size:1.7rem;font-weight:600;line-height:1.34;margin:3rem 0 1.2rem;padding-bottom:0.25rem;border-bottom:1px solid #eee;}
-
-    p  { margin:0 0 1.5rem; }
-    ul { margin:0 0 1.5rem 1.3rem; padding:0; }
-    li { margin-bottom:0.45rem; }
-
-    /* ───────── Navbar ───────── */
-    .navbar{
-      position:sticky;top:0;z-index:100;
-      display:flex;align-items:center;justify-content:space-between;
-      height:68px;padding:0 24px;background:#fff;border-bottom:1px solid #ddd;
+    /* ───── Navbar ───── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 780px;
+      margin: 0 auto;
+      height: 68px;
+      padding: 0 24px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
     }
-    .navbar img{height:54px;}
-    .navbar-links{display:flex;align-items:center;gap:32px;}
-    .navbar-links a{font-size:1.20rem;font-weight:500;color:#222;transition:color 0.18s;}
-    .navbar-links a.active{color:#0066a1;}
-    .navbar-links a:hover{color:#00507e;}
+    .ntu-logo {
+      height: 64px;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-links a {
+      font-size: 1.20rem;
+      font-weight: 500;
+      color: #222;
+      margin-left: 32px;
+      transition: color 0.18s;
+    }
+    .navbar-links a.active { color: #0066a1; }
+    .navbar-links a:hover { color: #00507e; }
 
-    .menu-toggle{display:none;font-size:1.7em;background:none;border:none;cursor:pointer;margin-right:8px;color:#222;}
+    .menu-toggle {
+      display: none;
+      font-size: 1.6em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
 
-    /* ───────── Mobile drawer ───────── */
-    @media(max-width:600px){
-      .menu-toggle{display:block;}
-
-      /* override flex layout */
-      .navbar-links{
-        position:fixed;left:0;top:68px;height:calc(100vh - 68px);
-        width:78vw;max-width:240px;
-        flex-direction:column;align-items:flex-start;
-        padding:24px 20px;background:#fff;border-right:1px solid #ddd;
-        gap:16px;
-        transform:translateX(-100%);transition:transform 0.25s ease-out;
-        box-shadow:2px 0 8px rgba(0,0,0,0.05);
+    @media (max-width: 600px) {
+      .menu-toggle {
+        display: block;
+        z-index: 200;
       }
-      .navbar.open .navbar-links{transform:translateX(0);}
-      .navbar-links a{margin:0;width:100%;padding:8px 4px;border-bottom:1px solid #f1f1f1;}
+      .navbar-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 24px;
+        width: 180px;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .navbar-links a {
+        margin: 0;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+      }
+      .navbar-links a:last-child {
+        border-bottom: none;
+      }
+      .navbar.open .navbar-links {
+        display: flex;
+      }
     }
 
-    /* ───────── Layout ───────── */
-    .container{max-width:780px;margin:16px auto;padding:0 24px;}
-    .profile-photo{float:left;width:160px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.06);margin:0 32px 12px 0;}
-    .invite{margin:1.8rem 0;padding:1rem;background:#f5f9ff;border-left:4px solid #0077b6;color:#044d73;line-height:1.55;}
-    .research-list{list-style:disc;margin:0 0 1.6rem 1.3rem;}
-    .research-list li{margin-bottom:0.9rem;line-height:1.5;}
-    .research-list li strong{display:block;font-weight:600;margin-bottom:0.25rem;}
+    /* ───── Headings ───── */
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.22;
+      margin: 0 0 0.9rem;
+    }
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      line-height: 1.34;
+      margin: 3.5rem 0 1rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* ───── Paragraphs & lists ───── */
+    p  { margin: 0 0 1.15rem; }
+    ul { margin: 0 0 1.15rem 1.3rem; padding: 0; }
+    li { margin-bottom: 0.01rem; }
+
+    /* ───── Container ───── */
+    .container {
+      max-width: 780px;
+      margin: 16px auto;
+      padding: 0 24px;
+    }
+
+    /* ───── Profile photo ───── */
+    .profile-photo {
+      float: left;
+      width: 160px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin: 0 32px 12px 0;
+    }
+
+    /* ───── Recruiting banner ───── */
+    .invite {
+      margin: 1.8rem 0;
+      padding: 1rem;
+      background: #f5f9ff;
+      border-left: 4px solid #0077b6;
+      color: #044d73;
+      line-height: 1.55;
+    }
+
+    /* ───── Research list ───── */
+    .research-list {
+      list-style: disc;
+      margin: 0 0 1.6rem 1.3rem;
+    }
+    .research-list li {
+      margin-bottom: 0.9rem;
+      line-height: 1.5;
+    }
+    .research-list li strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
   </style>
 </head>
 
 <body>
   <!-- Navigation -->
-  <div class="navbar" id="navbar">
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-    <img src="img/ntu_logo.png" alt="NTU Logo">
-    <div class="navbar-links" id="navLinks">
-      <a href="/" class="active">About</a>
-      <a href="publications.html">Publications</a>
-      <a href="people.html">People</a>
+  <div class="navbar">
+    <img src="img/ntu_logo.png" alt="NTU Logo" class="ntu-logo">
+
+    <div class="nav-right">
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <div class="navbar-links">
+        <a href="/" class="active">About</a>
+        <a href="publications.html">Publications</a>
+        <a href="people.html">People</a>
+      </div>
     </div>
   </div>
 
@@ -90,48 +187,70 @@
     <h1>Wei DONG</h1>
 
     <img src="img/wei_dong_photo.png" alt="Wei Dong" class="profile-photo">
-
     <div class="info">
       <strong>Nanyang Assistant Professor</strong><br>
-      <a href="https://www.ntu.edu.sg/computing/" target="_blank">College of Computing and Data Science</a><br>
-      <a href="https://www.ntu.edu.sg/" target="_blank">Nanyang Technological University</a><br>
+      <a href="https://www.ntu.edu.sg/computing/" target="_blank">
+        College of Computing and Data Science
+      </a><br>
+      <a href="https://www.ntu.edu.sg/" target="_blank">
+        Nanyang Technological University
+      </a><br>
       Block N4, 02b-69b<br>
       50 Nanyang Ave<br>
-      <a href="https://weidong.hk/weidong/Thesis.pdf" target="_blank">Ph.D. Thesis</a><br>
+      <a href="https://weidong.hk/weidong/Thesis.pdf" target="_blank">
+        Ph.D. Thesis
+      </a><br>
       Email: wei_dong AT ntu DOT edu DOT sg
     </div>
-
+    <br>
     <p>
-      I am currently a Nanyang Assistant Professor starting Fall 2024. Previously, I was a post‑doctoral fellow at
-      <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, co‑supervised by
+      I am currently a Nanyang Assistant Professor starting Fall 2024. Previously,
+      I was a post-doctoral fellow at
+      <a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>,
+      co-supervised by
       <a href="https://elaineshi.com/" target="_blank">Prof. Elaine Shi</a> and
       <a href="https://gfanti.github.io/website/" target="_blank">Prof. Giulia Fanti</a>.
       Before that, I received my PhD from the
-      <a href="https://cse.hkust.edu.hk/" target="_blank">CSE department</a> of
+      <a href="https://cse.hkust.edu.hk/" target="_blank">CSE Department</a> of
       <a href="https://hkust.edu.hk/" target="_blank">HKUST</a>, advised by
       <a href="https://www.cse.ust.hk/~yike/" target="_blank">Prof. Ke Yi</a>.
     </p>
 
     <div class="invite">
-      I am looking for highly motivated Post‑docs, Research Assistants, Ph.D. students (Fall 2026), and Visiting Interns to join my group.
-      Start dates for non‑Ph.D. positions are flexible. If you are interested, please email me your CV.
+      I am looking for highly motivated Post-docs, Research Assistants, Ph.D. students
+      (Fall 2026), and Visiting Interns to join my group. Start dates for non-Ph.D.
+      positions are flexible. If you are interested, please email me your CV!
     </div>
 
-    <!-- Research interests -->
     <section>
       <h2>Research Interests</h2>
-      <p>My research interests include data privacy and security, privacy‑preserving AI, and the security of large‑language‑model (LLM) systems.</p>
+      <p>
+        My research interests include data privacy and security, privacy-preserving AI, and LLM&AI security.
+      </p>
       <ul class="research-list">
-        <li><strong>Data Privacy and Security</strong>We design differential‑privacy mechanisms for a wide range of data‑analytics tasks, aiming to safeguard privacy in analytical outcomes. Our focus is on solutions that are both theoretically sound and empirically effective.</li>
-        <li><strong>Privacy‑Preserving AI</strong>We leverage differential privacy (DP), secure multi‑party computation (MPC), and zero‑knowledge proofs (ZKP) to protect privacy across the entire AI lifecycle—from data collection and training to deployment and inference.</li>
-        <li><strong>LLM and AI Security</strong>We study security and misuse challenges associated with large language models, including preserving privacy in LLM applications, protecting LLM intellectual property, defending against malicious uses, and using LLMs to enhance system security.</li>
+        <li>
+          <strong>Data Privacy and Security</strong>
+          We design differential-privacy mechanisms for a wide range of data-analytics
+          tasks, aiming to safeguard privacy in analytical outcomes. Our focus is on
+          solutions that are both theoretically sound and empirically effective.
+        </li>
+        <li>
+          <strong>Privacy-Preserving AI</strong>
+          We leverage differential privacy (DP), secure multi-party computation (MPC),
+          and zero-knowledge proofs (ZKP) to protect privacy across the entire AI lifecycle—from data collection and training to deployment and inference.
+        </li>
+        <li>
+          <strong>LLM and AI Security</strong>
+          We study security and misuse challenges associated with large language models,
+          including preserving privacy in LLM applications, protecting LLM intellectual
+          property, defending against malicious uses, and using LLMs to enhance system security.
+        </li>
       </ul>
     </section>
 
-    <!-- Awards -->
     <h2>Selected Awards</h2>
     <ul>
-      <li>SIGMOD Jim Gray Doctoral Dissertation Award Runner‑up 2024</li>
+      <li>SIGMOD Jim Gray Doctoral Dissertation Award Runner-up 2024</li>
       <li>Best PhD Dissertation Award 2023, CSE, HKUST</li>
       <li>SENG PhD Research Excellence Award 2023, HKUST</li>
       <li>ACM SIGMOD Research Highlight Award 2023</li>
@@ -139,13 +258,12 @@
       <li>Hong Kong PhD Fellowship 2018–2022</li>
     </ul>
 
-    <!-- Service -->
     <h2>Service</h2>
     <ul>
-      <li><strong>PC Member:</strong> ICDE 2024, Usenix Security 2025, VLDB 2026, Usenix Security 2026, SIGMOD 2026</li>
+      <li><strong>PC Member:</strong> ICDE 2024, Usenix Security 2025, VLDB 2026,
+          Usenix Security 2026, SIGMOD 2026</li>
     </ul>
 
-    <!-- Teaching -->
     <h2>Teaching</h2>
     <ul>
       <li><strong>SD6123 – Data Privacy in Data Science:</strong> 2024/25 Spring</li>
@@ -153,13 +271,11 @@
   </div>
 
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbar = document.getElementById('navbar');
-
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', !expanded);
-      navbar.classList.toggle('open');
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.navbar');
+    btn.addEventListener('click', () => {
+      const opened = nav.classList.toggle('open');
+      btn.textContent = opened ? '✕' : '☰';
     });
   </script>
 </body>
