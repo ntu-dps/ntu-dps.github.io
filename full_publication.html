@@ -1,1 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Full Publications – Wei Dong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* ───── Base typography ───── */
+    :root { --base-font-size: 17px; }
+    html  { font-size: var(--base-font-size); }
+    body {
+      margin: 0;
+      font-family:
+        "Source Sans Pro",
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+      font-weight: 400;
+      line-height: 1.72;
+      letter-spacing: 0.011em;
+      color: #222;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #0077b6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ───── Navbar ───── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 780px;
+      margin: 0 auto;
+      height: 68px;
+      padding: 0 24px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .ntu-logo {
+      height: 64px;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-links a {
+      font-size: 1.20rem;
+      font-weight: 500;
+      color: #222;
+      margin-left: 32px;
+      transition: color 0.18s;
+    }
+    .navbar-links a.active {
+      color: #0066a1;
+    }
+    .navbar-links a:hover {
+      color: #00507e;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.6em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .menu-toggle {
+        display: block;
+        z-index: 200;
+      }
+      .navbar-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 24px;
+        width: 180px;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .navbar-links a {
+        margin: 0;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+      }
+      .navbar-links a:last-child {
+        border-bottom: none;
+      }
+      .navbar.open .navbar-links {
+        display: flex;
+      }
+    }
+
+    /* ───── Headings ───── */
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.22;
+      margin: 0 0 .9rem;
+    }
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      line-height: 1.34;
+      margin: 3rem 0 1.2rem;
+      padding-bottom: .25rem;
+      border-bottom: 1px solid #eee;
+    }
+    h3 {
+      font-size: 1.18rem;
+      font-weight: 600;
+      margin: 1.8rem 0 .8rem;
+    }
+
+    /* ───── Container ───── */
+    .container {
+      max-width: 780px;
+      margin: 16px auto 90px;
+      padding: 0 24px;
+    }
+    .note {
+      font-size: .93rem;
+      color: #555;
+      margin-bottom: 2.2rem;
+    }
+    ul {
+      margin: 0 0 1.5rem 1.3rem;
+      padding: 0;
+    }
+    li {
+      margin-bottom: .55rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="navbar">
+    <img src="img/ntu_logo.png" alt="NTU Logo" class="ntu-logo">
+    <div class="nav-right">
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <div class="navbar-links">
+        <a href="/">About</a>
+        <a href="publications.html" class="active">Publications</a>
+        <a href="people.html">People</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="container">
+    <h1>Publications</h1>
+    <p class="note">
+      <!-- <em>Note:</em> <strong>*</strong> indicates I am the corresponding author.
+      <u>Underline</u> indicates my student or post-doc. -->
+      Below are full publications.
+      <strong>*</strong> indicates I am the corresponding author.
+      <u>Underline</u> indicates my students or post-doc.
+      <!-- Full publication list is available <a href="full_publication.html">[here]</a>. -->
+    </p>
+
+    <!-- Journal papers -->
+    <h2>Journal Papers</h2>
+
+
+    <!-- Conference papers -->
+    <h2>Conference Papers</h2>
+
+
+  <script>
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.navbar');
+    btn.addEventListener('click', () => {
+      const opened = nav.classList.toggle('open');
+      btn.textContent = opened ? '✕' : '☰';
+    });
+  </script>
+
+</body>
+</html>
