@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Full Publications – Wei Dong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* ───── Base typography ───── */
+    :root { --base-font-size: 17px; }
+    html  { font-size: var(--base-font-size); }
+    body {
+      margin: 0;
+      font-family:
+        "Source Sans Pro",
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+      font-weight: 400;
+      line-height: 1.72;
+      letter-spacing: 0.011em;
+      color: #222;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #0077b6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ───── Navbar ───── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 780px;
+      margin: 0 auto;
+      height: 68px;
+      padding: 0 24px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .ntu-logo {
+      height: 64px;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-links a {
+      font-size: 1.20rem;
+      font-weight: 500;
+      color: #222;
+      margin-left: 32px;
+      transition: color 0.18s;
+    }
+    .navbar-links a.active {
+      color: #0066a1;
+    }
+    .navbar-links a:hover {
+      color: #00507e;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.6em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .menu-toggle {
+        display: block;
+        z-index: 200;
+      }
+      .navbar-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 24px;
+        width: 180px;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .navbar-links a {
+        margin: 0;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+      }
+      .navbar-links a:last-child {
+        border-bottom: none;
+      }
+      .navbar.open .navbar-links {
+        display: flex;
+      }
+    }
+
+    /* ───── Headings ───── */
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.22;
+      margin: 0 0 .9rem;
+    }
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      line-height: 1.34;
+      margin: 3rem 0 1.2rem;
+      padding-bottom: .25rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* ───── Container ───── */
+    .container {
+      max-width: 780px;
+      margin: 16px auto 90px;
+      padding: 0 24px;
+    }
+    .note {
+      font-size: .93rem;
+      color: #555;
+      margin-bottom: 2.2rem;
+    }
+    ul {
+      margin: 0 0 1.5rem 1.3rem;
+      padding: 0;
+    }
+    li {
+      margin-bottom: .55rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="navbar">
+    <img src="img/ntu_logo.png" alt="NTU Logo" class="ntu-logo">
+    <div class="nav-right">
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <div class="navbar-links">
+        <a href="/">About</a>
+        <a href="publications.html" class="active">Publications</a>
+        <a href="people.html">People</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="container">
+    <h1>Full Publications</h1>
+    <p class="note">
+      Below are full publications.
+      <strong>*</strong> indicates I am the corresponding author.
+      <u>Underline</u> indicates my students or post-doc.
+    </p>
+
+    <!-- 2026 -->
+    <h2>2026</h2>
+    <ul>
+      <li>
+        <u>Xinghe Chen</u>, Dajun Sun, Quanqing Xu, <strong>Wei Dong*</strong>.
+        "A General Framework for Per-record Differential Privacy."
+        <strong>SIGMOD</strong>, May 2026.
+      </li>
+
+      <li>
+        <u>Yihua Hu</u>, <u>Hao Ding</u>, <strong>Wei Dong*</strong>.
+        "N2E: A General Framework to Reduce Node-Differential Privacy to Edge-Differential Privacy for Graph Analytics."
+        <strong>SIGMOD</strong>, May 2026.
+      </li>
+
+      <li>
+        <u>Xinfeng Li</u>, Tianze Qiu, Yingbin Jin, <u>Lixu Wang</u>, Hanqing Guo, Xiaojun Jia, XiaoFeng Wang, <strong>Wei Dong*</strong>.
+        "WebCloak: Characterizing and Mitigating Threats from LLM-Driven Web Agents as Intelligent Scrapers."
+        <strong>S&P</strong>, May 2026.
+      </li>
+    </ul>
+
+    <!-- 2025 -->
+    <h2>2025</h2>
+    <ul>
+      <li>
+        <u>Lixu Wang</u>, Chenxi Liu, Junfeng Guo, Qingqing Ye, Heng Huang, Haibo Hu, <strong>Wei Dong*</strong>.
+        "Federated Continuous Category Discovery and Learning."
+        <strong>ICCV</strong>, Oct 2025.
+        <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Wang_Federated_Continuous_Category_Discovery_and_Learning_ICCV_2025_paper.pdf" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        Feiran Liu, Yuzhe Zhang, Xinyi Huang, Yinan Peng, <u>Xinfeng Li</u>, <u>Lixu Wang</u>, Yutong Shen, Ranjie Duan, Simeng Qin, Xiaojun Jia, Qingsong Wen, <strong>Wei Dong</strong>.
+        "The Eye of Sherlock Holmes: Uncovering User Private Attribute Profiling via Vision-Language Model Agentic Framework."
+        <strong>ACM MM</strong>, Oct 2025.
+        <a href="https://dl.acm.org/doi/10.1145/3746027.3755643" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        Dajun Sun, <strong>Wei Dong</strong>, Yuan Qiu, Ke Yi, Graham Cormode.
+        "Sum Estimation under Personalized Local Differential Privacy."
+        <strong>NeurIPS</strong>, Sep 2025.
+        <a href="https://openreview.net/pdf?id=AXlquRUO0S" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        Qiyao Luo, Jianzhe Yu, <strong>Wei Dong*</strong>, Quanqing Xu, Chuanhui Yang, Ke Yi.
+        "RM²: Answer Counting Queries Efficiently under Shuffle Differential Privacy."
+        <strong>SIGMOD</strong>, Jun 2025.
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3725415" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        <u>Lixu Wang</u>, Bingqi Shang, Yi Li, Payal Mohapatra, <strong>Wei Dong</strong>, Xiao Wang, Qi Zhu.
+        "Split Adaptation for Pre-trained Vision Transformers."
+        <strong>CVPR</strong>, Jun 2025.
+        <a href="https://arxiv.org/abs/2503.00441" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        Yu He, Boheng Li, Liu Liu, Zhongjie Ba, <strong>Wei Dong</strong>, Yiming Li, Zhan Qin, Kui Ren, Chun Chen.
+        "Towards Label-only Membership Inference Attack against Pre-trained Large Language Models."
+        <strong>USENIX Security</strong>, Feb 2025.
+        <a href="https://www.usenix.org/system/files/conference/usenixsecurity25/sec25cycle1-prepub-1107-he.pdf" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        Haoyang Li, Yiming Li, Anxin Tian, Tianhao Tang, Zhanchao Xu, Xuejia Chen, Nicole Hu, <strong>Wei Dong</strong>, Qing Li, Lei Chen.
+        "A Survey on Large Language Model Acceleration Based on KV Cache Management."
+        <strong>TMLR</strong>, 2025.
+        <a href="https://arxiv.org/pdf/2412.19442" target="_blank">[pdf]</a>
+      </li>
+    </ul>
+
+    <!-- 2024 -->
+    <h2>2024</h2>
+    <ul>
+      <li>
+        Dajun Sun, <strong>Wei Dong*</strong>, Ke Yi.
+        "Personalized Truncation for Personalized Privacy."
+        <strong>SIGMOD</strong>, Dec 2024.
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3698825" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        <strong>Wei Dong</strong>, Qiyao Luo, Giulia Fanti, Elaine Shi, Ke Yi.
+        "Almost Instance-optimal Clipping for Summation Problems in the Shuffle Model of Differential Privacy."
+        <strong>CCS</strong>, Dec 2024.
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3658644.3690225" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        <strong>Wei Dong</strong>, Juanru Fang, Ke Yi, Yuchao Tao, Ashwin Machanavajjhala.
+        "Instance-optimal Truncation for Differentially Private Query Evaluation with Foreign Keys."
+        <strong>TODS</strong>, Nov 2024.
+        <a href="https://dl.acm.org/doi/10.1145/3697831" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        Jianzhe Yu, <strong>Wei Dong</strong>, Juanru Fang, Dajun Sun, Ke Yi.
+        "DOP-SQL: A General-purpose, High-utility, and Extensible Private SQL System."
+        <strong>VLDB</strong>, Aug 2024.
+        <a href="https://www.vldb.org/pvldb/vol17/p4385-yu.pdf" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        <strong>Wei Dong</strong>, Zijun Chen, Qiyao Luo, Elaine Shi, Ke Yi.
+        "Continual Observation of Joins under Differential Privacy."
+        <strong>SIGMOD</strong>, May 2024.
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3654931" target="_blank">[pdf]</a>
+      </li>
+    </ul>
+
+    <!-- 2023 -->
+    <h2>2023</h2>
+    <ul>
+      <li>
+        <strong>Wei Dong</strong>, Ke Yi.
+        "Query Evaluation under Differential Privacy."
+        <strong>SIGMOD Rec.</strong>, 52(3): 6-17, Nov 2023.
+        <a href="https://sigmodrecord.org/publications/sigmodRecord/2309/pdfs/03_Principles_Dong.pdf" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        Dajun Sun, <strong>Wei Dong</strong>, Ke Yi.
+        "Confidence Intervals for Private Query Processing."
+        <strong>VLDB</strong>, Nov 2023.
+        <a href="https://www.vldb.org/pvldb/vol17/p373-sun.pdf" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        <strong>Wei Dong</strong>, Dajun Sun, Ke Yi.
+        "Better than Composition: How to Answer Multiple Relational Queries under Differential Privacy."
+        <strong>SIGMOD</strong>, Jun 2023.
+        <a href="https://www.cse.ust.hk/~yike/MQDP.pdf" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        <strong>Wei Dong</strong>, Ke Yi.
+        "Universal Private Estimators."
+        <strong>PODS</strong>, Jun 2023.
+        <a href="https://arxiv.org/pdf/2111.02598" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        <strong>Wei Dong</strong>, Qiyao Luo, Ke Yi.
+        "Continual Observation under User-level Differential Privacy."
+        <strong>S&P</strong>, May 2023.
+        <a href="https://home.cse.ust.hk/~yike/StreamUDP.pdf" target="_blank">[pdf]</a>
+      </li>
+    </ul>
+
+    <!-- 2022 -->
+    <h2>2022</h2>
+    <ul>
+      <li>
+        <strong>Wei Dong</strong>, Yuting Liang, Ke Yi.
+        "Differentially Private Covariance Revisited."
+        <strong>NeurIPS</strong>, Dec 2022.
+        <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/057405fd73dd7ba7f32a7cb34fb7c7f5-Paper-Conference.pdf" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        Juanru Fang, <strong>Wei Dong</strong>, Ke Yi.
+        "Shifted Inverse: A General Mechanism for Monotonic Functions under User Differential Privacy."
+        <strong>CCS</strong>, Nov 2022.
+        <a href="https://juanru-fang.github.io/ShiftedInverse.pdf" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        Yuan Qiu, <strong>Wei Dong</strong>, Ke Yi, Bin Wu, Feifei Li.
+        "Releasing Private Data for Numerical Queries."
+        <strong>KDD</strong>, Aug 2022.
+        <a href="https://www.cse.ust.hk/~yike/Private_numerical_queries.pdf" target="_blank">[pdf]</a>
+      </li>
+
+      <li>
+        <strong>Wei Dong</strong>, Juanru Fang, Ke Yi, Yuchao Tao, Ashwin Machanavajjhala.
+        "R2T: Instance-optimal Truncation for Differentially Private Query Evaluation with Foreign Keys."
+        <strong>SIGMOD</strong>, Jun 2022.
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3514221.3517844" target="_blank">[pdf]</a>
+        <strong>(Best Paper)</strong>
+      </li>
+
+      <li>
+        <strong>Wei Dong</strong>, Ke Yi.
+        "A Nearly Instance-optimal Differentially Private Mechanism for Conjunctive Queries."
+        <strong>PODS</strong>, Jun 2022.
+        <a href="https://arxiv.org/pdf/2105.05443" target="_blank">[pdf]</a>
+      </li>
+    </ul>
+
+    <!-- 2021 -->
+    <h2>2021</h2>
+    <ul>
+      <li>
+        <strong>Wei Dong</strong>, Ke Yi.
+        "Residual Sensitivity for Differentially Private Multi-way Joins."
+        <strong>SIGMOD</strong>, Jun 2021.
+        <a href="https://www.cse.ust.hk/~yike/ResidualSensitivity-full.pdf" target="_blank">[pdf]</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    const btn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.navbar');
+    btn.addEventListener('click', () => {
+      const opened = nav.classList.toggle('open');
+      btn.textContent = opened ? '✕' : '☰';
+    });
+  </script>
+
+</body>
+</html>
