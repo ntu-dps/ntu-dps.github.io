@@ -141,13 +141,39 @@
     .person-info .period,
     .person-info .cosupervision { color: #666; font-size: 0.9rem; margin-bottom: 3px; }
     .person-info .degree { color: #888; font-size: 0.82rem; } /* education line */
-    .person-info .current-position {
-      color: #555;
-      font-size: 0.86rem;
-      line-height: 1.35;
-      margin-top: 4px;
+    .alumni-list {
+      list-style: none;
+      margin-left: 0;
     }
-    .person-info .current-position strong { color: #444; font-weight: 600; }
+    .alumni-list li {
+      position: relative;
+      padding-left: 1.05rem;
+      margin-bottom: 0.95rem;
+      line-height: 1.45;
+    }
+    .alumni-list li:last-child { margin-bottom: 0; }
+    .alumni-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: -0.02rem;
+      color: #111;
+      font-size: 1.22rem;
+      line-height: 1.45;
+    }
+    .alumni-list a {
+      color: inherit;
+      font-weight: 600;
+    }
+    .alumni-list .period {
+      color: #666;
+      white-space: nowrap;
+    }
+    .alumni-list .note {
+      display: block;
+      color: #555;
+      margin-top: 0.15rem;
+    }
 
   </style>
 </head>
@@ -351,25 +377,19 @@
 
     <!-- Alumni -->
     <h2>Alumni</h2>
-    <div class="card-group">
-      <div class="person-card">
-        <img src="img/lixu_wang.jpg" alt="Lixu Wang" class="person-photo">
-        <div class="person-info">
-          <h3><a href="https://conditionwang.github.io/" target="_blank" rel="noopener">Dr Lixu Wang</a></h3>
-          <div class="period">January 2025 – May 2026</div>
-          <div class="current-position"><strong>Now:</strong> Assistant Professor at The Chinese University of Hong Kong (Shenzhen)</div>
-        </div>
-      </div>
-
-      <div class="person-card">
-        <img src="img/xinfeng_li.jpg" alt="Xinfeng Li" class="person-photo">
-        <div class="person-info">
-          <h3><a href="https://letterligo.github.io/" target="_blank" rel="noopener">Dr Xinfeng Li</a></h3>
-          <div class="period">August 2024 – August 2026</div>
-          <div class="current-position"><strong>Now:</strong> Assistant Professor at The Hong Kong Polytechnic University</div>
-        </div>
-      </div>
-    </div>
+    <ul class="alumni-list">
+      <li>
+        <a href="https://conditionwang.github.io/" target="_blank" rel="noopener">Dr Lixu Wang</a>,
+        <span class="period">January 2025 – June 2026</span>.
+        <span class="note">Now: Assistant Professor at The Chinese University of Hong Kong (Shenzhen).</span>
+      </li>
+      <li>
+        <a href="https://letterligo.github.io/" target="_blank" rel="noopener">Dr Xinfeng Li</a>,
+        <span class="period">August 2024 – August 2026</span>,
+        <span class="period">Co-supervised with Xiaofeng Wang</span>.
+        <span class="note">Now: Assistant Professor at The Hong Kong Polytechnic University.</span>
+      </li>
+    </ul>
   </div>
 
   <!-- Navbar toggle -->
