@@ -141,39 +141,13 @@
     .person-info .period,
     .person-info .cosupervision { color: #666; font-size: 0.9rem; margin-bottom: 3px; }
     .person-info .degree { color: #888; font-size: 0.82rem; } /* education line */
-    .alumni-list {
-      list-style: none;
-      margin-left: 0;
-    }
-    .alumni-list li {
-      position: relative;
-      padding-left: 1.05rem;
-      margin-bottom: 0.95rem;
-      line-height: 1.45;
-    }
-    .alumni-list li:last-child { margin-bottom: 0; }
-    .alumni-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: -0.02rem;
-      color: #111;
-      font-size: 1.22rem;
-      line-height: 1.45;
-    }
-    .alumni-list a {
-      color: inherit;
-      font-weight: 600;
-    }
-    .alumni-list .period {
-      color: #666;
-      white-space: nowrap;
-    }
-    .alumni-list .note {
-      display: block;
+    .person-info .current-position {
       color: #555;
-      margin-top: 0.15rem;
+      font-size: 0.86rem;
+      line-height: 1.35;
+      margin-top: 4px;
     }
+    .person-info .current-position strong { color: #444; font-weight: 600; }
 
   </style>
 </head>
@@ -338,21 +312,6 @@
         </div>
       </div>
 
-<!--       <div class="person-card">
-        <img src="img/yige_jiang.jpg" alt="Yige Jiang" class="person-photo">
-        <div class="person-info">
-          <h3>Yige Jiang</h3>
-          <div class="cosupervision">Co-supervised with Siqiang Luo</div>
-          <div class="period">August 2025 – Present</div>
-          <div class="degree">BE, CUHK-SZ</div>
-        </div>
-      </div> -->
-    </div>
-
-    <!-- Research Staff -->
-    <h2>Research Staff</h2>
-    <div class="card-group">
-      
       <div class="person-card">
         <img src="img/siyi_wang.jpg" alt="Siyi Wang" class="person-photo">
         <div class="person-info">
@@ -367,28 +326,44 @@
         <div class="person-info">
           <h3>Peng Yang</h3>
           <div class="cosupervision">Co-supervised with Xiaofeng Wang</div>
-          <div class="period">November 2025-present</div>
+          <div class="period">November 2025 – Present</div>
           <div class="degree">ME, Harbin Institute of Technology (SZ)</div>
         </div>
       </div>
 
-      
+<!--       <div class="person-card">
+        <img src="img/yige_jiang.jpg" alt="Yige Jiang" class="person-photo">
+        <div class="person-info">
+          <h3>Yige Jiang</h3>
+          <div class="cosupervision">Co-supervised with Siqiang Luo</div>
+          <div class="period">August 2025 – Present</div>
+          <div class="degree">BE, CUHK-SZ</div>
+        </div>
+      </div> -->
     </div>
 
     <!-- Alumni -->
     <h2>Alumni</h2>
-    <ul class="alumni-list">
-      <li>
-        <a href="https://conditionwang.github.io/" target="_blank" rel="noopener">Lixu Wang</a>,
-        <span class="period">PostDoc, January 2025 – June 2026</span>.
-        <span class="note">Now: Assistant Professor at The Chinese University of Hong Kong (Shenzhen).</span>
-      </li>
-      <li>
-        <a href="https://letterligo.github.io/" target="_blank" rel="noopener">Xinfeng Li</a>,
-        <span class="period">PostDoc, August 2024 – August 2026, Co-supervised with Xiaofeng Wang</span>.
-        <span class="note">Now: Assistant Professor at The Hong Kong Polytechnic University.</span>
-      </li>
-    </ul>
+    <div class="card-group">
+      <div class="person-card">
+        <img src="img/lixu_wang.jpg" alt="Lixu Wang" class="person-photo">
+        <div class="person-info">
+          <h3><a href="https://conditionwang.github.io/" target="_blank" rel="noopener">Lixu Wang</a></h3>
+          <div class="period">PostDoc, January 2025 – June 2026</div>
+          <div class="current-position"><strong>Now:</strong> Assistant Professor at The Chinese University of Hong Kong (Shenzhen)</div>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <img src="img/xinfeng_li.jpg" alt="Xinfeng Li" class="person-photo">
+        <div class="person-info">
+          <h3><a href="https://letterligo.github.io/" target="_blank" rel="noopener">Xinfeng Li</a></h3>
+          <div class="cosupervision">Co-supervised with Xiaofeng Wang</div>
+          <div class="period">PostDoc, August 2024 – August 2026</div>
+          <div class="current-position"><strong>Now:</strong> Assistant Professor at The Hong Kong Polytechnic University</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Navbar toggle -->
