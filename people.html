@@ -120,7 +120,7 @@
     /* ——— Profile cards ——— */
     .card-group { display: flex; flex-wrap: wrap; gap: 24px; }
     .person-card {
-      flex: 0 0 calc(50% - 24px);     /* two per row by default (laptop) */
+      flex: 0 0 calc(50% - 12px);     /* two per row by default (laptop) */
       box-sizing: border-box;
       display: flex;
       align-items: center;
@@ -130,6 +130,7 @@
       border: 1px solid #e0e0e0;
       border-radius: 8px;
     }
+    .person-info { min-width: 0; }
     .person-photo {
       width: 70px;
       height: 90px;
@@ -140,6 +141,14 @@
     .person-info h3 a { color: inherit; }
     .person-info .period,
     .person-info .cosupervision { color: #666; font-size: 0.9rem; margin-bottom: 3px; }
+    .person-info .research-interest {
+      color: #555;
+      font-size: 0.88rem;
+      line-height: 1.35;
+      margin-top: 4px;
+    }
+    .person-info .research-interest strong { color: #444; font-weight: 600; }
+    .person-info .research-interest .topic { white-space: nowrap; }
     .person-info .current-position {
       color: #555;
       font-size: 0.86rem;
@@ -226,6 +235,7 @@
           </a>
         </h3>
         <div class="period">August 2024 – Present</div>
+        <div class="research-interest"><strong>Research interests:</strong> <span class="topic">Differential Privacy</span>, <span class="topic">Database Security</span></div>
       </div>
     </div>
     
@@ -238,6 +248,7 @@
             </a>
           </h3>
           <div class="period">August 2024 – Present</div>
+          <div class="research-interest"><strong>Research interests:</strong> <span class="topic">Differential Privacy</span>, <span class="topic">Cryptography</span></div>
         </div>
       </div>
 
@@ -246,6 +257,7 @@
         <div class="person-info">
           <h3>Fahong Zhang</h3>
           <div class="period">August 2025 – Present</div>
+          <div class="research-interest"><strong>Research interests:</strong> <span class="topic">Cryptography</span></div>
         </div>
       </div>
 
@@ -254,6 +266,7 @@
         <div class="person-info">
           <h3>Li Ge</h3>
           <div class="period">August 2025 – Present</div>
+          <div class="research-interest"><strong>Research interests:</strong> <span class="topic">Differential Privacy</span>, <span class="topic">Cryptography</span>, <span class="topic">AI Security</span></div>
         </div>
       </div>
 
@@ -262,6 +275,7 @@
         <div class="person-info">
           <h3>Weitao Feng</h3>
           <div class="period">August 2025 – Present</div>
+          <div class="research-interest"><strong>Research interests:</strong> <span class="topic">AI Security</span></div>
         </div>
       </div>
 
@@ -270,6 +284,7 @@
         <div class="person-info">
           <h3>Hao Ding</h3>
           <div class="period">August 2025 – Present</div>
+          <div class="research-interest"><strong>Research interests:</strong> <span class="topic">Differential Privacy</span></div>
         </div>
       </div>
 
@@ -278,6 +293,7 @@
         <div class="person-info">
           <h3>Kuncan Wang</h3>
           <div class="period">August 2025 – Present</div>
+          <div class="research-interest"><strong>Research interests:</strong> <span class="topic">AI Security</span></div>
         </div>
       </div>
 
@@ -287,6 +303,7 @@
           <h3><a href="https://linziyuu.github.io/" target="_blank" rel="noopener">Ziyu Lin</a></h3>
           <div class="cosupervision">Co-supervised with Xiaofeng Wang</div>
           <div class="period">January 2026 – Present</div>
+          <div class="research-interest"><strong>Research interests:</strong> <span class="topic">Network Security</span>, <span class="topic">5G Security</span>, <span class="topic">AI Security</span></div>
         </div>
       </div>
 
@@ -303,6 +320,7 @@
         <div class="person-info">
           <h3>Siyi Wang</h3>
           <div class="period">August 2026 – Present</div>
+          <div class="research-interest"><strong>Research interests:</strong> <span class="topic">Differential Privacy</span>, <span class="topic">Database Security</span></div>
         </div>
       </div>
 
@@ -312,6 +330,7 @@
           <h3>Peng Yang</h3>
           <div class="cosupervision">Co-supervised with Xiaofeng Wang</div>
           <div class="period">August 2026 – Present</div>
+          <div class="research-interest"><strong>Research interests:</strong> <span class="topic">Cryptography</span></div>
         </div>
       </div>
 
